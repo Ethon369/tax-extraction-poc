@@ -1,0 +1,5 @@
+{
+  "row_id": "v2-base-dev-01",
+  "source_text": "核验记录：收票单位模拟甲研究室；开具日2026-09-01；受票方编码TEST00000000000101。采购清单仅电池，未税金额420元，税率13%，税额54.6元。",
+  "raw_output": "{\"action\":\"extract\",\"data\":{\"invoice_date\":\"2026-09-01\",\"taxpayer_id\":\"TEST00000000000101\",\"buyer_name\":\"甲研究室\",\"items\":[{\"name\":\"电池\",\"amount_without_tax\":420,\"tax_rate\":0.13,\"tax_amount\":54.6}],\"missing_fields\":[]},\"reason\":null}"
+}

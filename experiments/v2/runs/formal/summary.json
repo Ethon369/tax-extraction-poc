@@ -1,0 +1,71 @@
+{
+  "profile": "formal",
+  "settings": {
+    "max_length": 512,
+    "batch_size": 1,
+    "gradient_accumulation": 4,
+    "gradient_checkpointing": true,
+    "learning_rate": 0.0001,
+    "epochs": 5,
+    "lora_rank": 8,
+    "lora_alpha": 16,
+    "lora_dropout": 0.05,
+    "target_modules": "all-linear",
+    "max_grad_norm": 1.0
+  },
+  "dtype": "torch.bfloat16",
+  "optimizer_steps": 110,
+  "epochs_started": 5,
+  "training_seconds": 311.4143366999997,
+  "peak_allocated_mib": 2932.234375,
+  "peak_reserved_mib": 4856.0,
+  "trainable_parameters": 9232384,
+  "maximum_parameter_update": 0.006258320063352585,
+  "all_losses_finite": true,
+  "dev_losses": [
+    {
+      "epoch": 1,
+      "loss": 0.04721139031850422
+    },
+    {
+      "epoch": 2,
+      "loss": 0.02617855216036939
+    },
+    {
+      "epoch": 3,
+      "loss": 0.02057860956908068
+    },
+    {
+      "epoch": 4,
+      "loss": 0.016063974044300267
+    },
+    {
+      "epoch": 5,
+      "loss": 0.015602458928545579
+    }
+  ],
+  "environment": {
+    "python": "3.11.16",
+    "packages": {
+      "torch": "2.8.0+cu126",
+      "transformers": "4.57.1",
+      "peft": "0.17.1",
+      "accelerate": "1.10.1",
+      "bitsandbytes": "0.48.1",
+      "pydantic": "2.12.3"
+    },
+    "gpu": "NVIDIA GeForce RTX 3060 Laptop GPU",
+    "total_vram_mib": 6143.5,
+    "cuda_runtime": "12.6"
+  },
+  "provenance": {
+    "model_manifest_sha256": "d08f083fb9553e279856a6a8bb1003047db7e84ca30d5caa15b4341ce2d5db33",
+    "config_sha256": "d52f4a9138ff1ec5a1b7d6fa07bb87e49b311f86d6ae28a5e315af70e82a8a81",
+    "data_sha256": {
+      "train": "0360f967ae17c755f080f6bba937f29968ab55e00a2e09c7107dcf8675c789c7",
+      "dev": "a84755e3128f938b67e1dc45f91907f91bfce10c56c04cb4394e3c39e5d442c2",
+      "test": "f1fb8a6674483c10695c8f050acfd317fad30b7f0955fb012648954c36c4648d",
+      "smoke": "0e3db78afedafca469370c705ab20c4dde2bc755df720f08159f6aa83eb082ed"
+    }
+  }
+}

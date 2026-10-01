@@ -1,0 +1,371 @@
+{
+  "samples": 26,
+  "json_parse": {
+    "correct": 26,
+    "total": 26,
+    "rate": 1.0
+  },
+  "schema_valid": {
+    "correct": 16,
+    "total": 26,
+    "rate": 0.6153846153846154
+  },
+  "routing": {
+    "correct": 22,
+    "total": 26,
+    "rate": 0.8461538461538461
+  },
+  "field_accuracy": {
+    "correct": 73,
+    "total": 88,
+    "rate": 0.8295454545454546
+  },
+  "non_null_field_micro_f1": {
+    "tp": 55,
+    "fp": 19,
+    "fn": 11,
+    "f1": 0.7857142857142857
+  },
+  "key_fields": {
+    "taxpayer_id": {
+      "correct": 8,
+      "total": 12
+    },
+    "amount_without_tax": {
+      "correct": 13,
+      "total": 13
+    },
+    "tax_rate": {
+      "correct": 13,
+      "total": 13
+    }
+  },
+  "tool_exact": {
+    "correct": 3,
+    "total": 4,
+    "rate": 0.75
+  },
+  "fallback_exact": {
+    "correct": 6,
+    "total": 10,
+    "rate": 0.6
+  },
+  "missing_fields_f1": {
+    "tp": 3,
+    "fp": 7,
+    "fn": 8,
+    "f1": 0.2857142857142857
+  },
+  "invented_values_on_null_fields": 4,
+  "tool_attempts_on_non_tool_requests": 0,
+  "latency_median_seconds": 8.497973850000562,
+  "hit_generation_limit": 0,
+  "details": [
+    {
+      "id": "v2-test-001",
+      "json_ok": true,
+      "schema_ok": false,
+      "route_ok": true,
+      "exact_response": false,
+      "parse_error": null
+    },
+    {
+      "id": "v2-test-002",
+      "json_ok": true,
+      "schema_ok": true,
+      "route_ok": true,
+      "exact_response": false,
+      "parse_error": null
+    },
+    {
+      "id": "v2-test-003",
+      "json_ok": true,
+      "schema_ok": true,
+      "route_ok": true,
+      "exact_response": true,
+      "parse_error": null
+    },
+    {
+      "id": "v2-test-004",
+      "json_ok": true,
+      "schema_ok": false,
+      "route_ok": true,
+      "exact_response": false,
+      "parse_error": null
+    },
+    {
+      "id": "v2-test-005",
+      "json_ok": true,
+      "schema_ok": false,
+      "route_ok": true,
+      "exact_response": false,
+      "parse_error": null
+    },
+    {
+      "id": "v2-test-006",
+      "json_ok": true,
+      "schema_ok": false,
+      "route_ok": true,
+      "exact_response": false,
+      "parse_error": null
+    },
+    {
+      "id": "v2-test-007",
+      "json_ok": true,
+      "schema_ok": false,
+      "route_ok": true,
+      "exact_response": false,
+      "parse_error": null
+    },
+    {
+      "id": "v2-test-008",
+      "json_ok": true,
+      "schema_ok": true,
+      "route_ok": true,
+      "exact_response": false,
+      "parse_error": null
+    },
+    {
+      "id": "v2-test-009",
+      "json_ok": true,
+      "schema_ok": false,
+      "route_ok": true,
+      "exact_response": false,
+      "parse_error": null
+    },
+    {
+      "id": "v2-test-010",
+      "json_ok": true,
+      "schema_ok": true,
+      "route_ok": true,
+      "exact_response": false,
+      "parse_error": null
+    },
+    {
+      "id": "v2-test-011",
+      "json_ok": true,
+      "schema_ok": false,
+      "route_ok": true,
+      "exact_response": false,
+      "parse_error": null
+    },
+    {
+      "id": "v2-test-012",
+      "json_ok": true,
+      "schema_ok": true,
+      "route_ok": true,
+      "exact_response": false,
+      "parse_error": null
+    },
+    {
+      "id": "v2-test-013",
+      "json_ok": true,
+      "schema_ok": true,
+      "route_ok": true,
+      "exact_response": true,
+      "parse_error": null
+    },
+    {
+      "id": "v2-test-014",
+      "json_ok": true,
+      "schema_ok": true,
+      "route_ok": false,
+      "exact_response": false,
+      "parse_error": null
+    },
+    {
+      "id": "v2-test-015",
+      "json_ok": true,
+      "schema_ok": true,
+      "route_ok": true,
+      "exact_response": true,
+      "parse_error": null
+    },
+    {
+      "id": "v2-test-016",
+      "json_ok": true,
+      "schema_ok": true,
+      "route_ok": true,
+      "exact_response": true,
+      "parse_error": null
+    },
+    {
+      "id": "v2-test-017",
+      "json_ok": true,
+      "schema_ok": false,
+      "route_ok": false,
+      "exact_response": false,
+      "parse_error": null
+    },
+    {
+      "id": "v2-test-018",
+      "json_ok": true,
+      "schema_ok": true,
+      "route_ok": true,
+      "exact_response": true,
+      "parse_error": null
+    },
+    {
+      "id": "v2-test-019",
+      "json_ok": true,
+      "schema_ok": true,
+      "route_ok": true,
+      "exact_response": true,
+      "parse_error": null
+    },
+    {
+      "id": "v2-test-020",
+      "json_ok": true,
+      "schema_ok": true,
+      "route_ok": true,
+      "exact_response": true,
+      "parse_error": null
+    },
+    {
+      "id": "v2-test-021",
+      "json_ok": true,
+      "schema_ok": false,
+      "route_ok": false,
+      "exact_response": false,
+      "parse_error": null
+    },
+    {
+      "id": "v2-test-022",
+      "json_ok": true,
+      "schema_ok": true,
+      "route_ok": true,
+      "exact_response": true,
+      "parse_error": null
+    },
+    {
+      "id": "v2-test-023",
+      "json_ok": true,
+      "schema_ok": false,
+      "route_ok": false,
+      "exact_response": false,
+      "parse_error": null
+    },
+    {
+      "id": "v2-test-024",
+      "json_ok": true,
+      "schema_ok": true,
+      "route_ok": true,
+      "exact_response": true,
+      "parse_error": null
+    },
+    {
+      "id": "v2-test-025",
+      "json_ok": true,
+      "schema_ok": true,
+      "route_ok": true,
+      "exact_response": false,
+      "parse_error": null
+    },
+    {
+      "id": "v2-test-026",
+      "json_ok": true,
+      "schema_ok": true,
+      "route_ok": true,
+      "exact_response": true,
+      "parse_error": null
+    }
+  ],
+  "boundaries": {
+    "missing_null_and_paths_exact": {
+      "correct": 2,
+      "total": 8,
+      "rate": 0.25
+    },
+    "scenario_exact": {
+      "missing_id": {
+        "correct": 0,
+        "total": 2
+      },
+      "missing_amount": {
+        "correct": 0,
+        "total": 1
+      },
+      "missing_rate": {
+        "correct": 1,
+        "total": 2
+      },
+      "multiple_missing": {
+        "correct": 0,
+        "total": 3
+      },
+      "complete_control": {
+        "correct": 0,
+        "total": 4
+      },
+      "valid_tool": {
+        "correct": 3,
+        "total": 4
+      },
+      "missing_calculation_rate": {
+        "correct": 0,
+        "total": 1
+      },
+      "missing_calculation_amount": {
+        "correct": 1,
+        "total": 1
+      },
+      "missing_deduction_ratio": {
+        "correct": 1,
+        "total": 1
+      },
+      "missing_deduction_tax": {
+        "correct": 1,
+        "total": 1
+      },
+      "conflicting_rate": {
+        "correct": 0,
+        "total": 1
+      },
+      "conflicting_amount": {
+        "correct": 1,
+        "total": 1
+      },
+      "unregistered_tool": {
+        "correct": 1,
+        "total": 2
+      },
+      "unrelated_request": {
+        "correct": 1,
+        "total": 2
+      }
+    },
+    "raw_prediction_only": true
+  },
+  "mode": "before",
+  "split": "test",
+  "adapter_sha256": "bd6e229d5f08a576dbf8411e07cea037a37193d1f8d316d34e5856ce85b872e6",
+  "adapter_path": "runs/formal/adapter",
+  "peak_allocated_mib": 1191.9423828125,
+  "peak_reserved_mib": 1576.0,
+  "environment": {
+    "python": "3.11.16",
+    "packages": {
+      "torch": "2.8.0+cu126",
+      "transformers": "4.57.1",
+      "peft": "0.17.1",
+      "accelerate": "1.10.1",
+      "bitsandbytes": "0.48.1",
+      "pydantic": "2.12.3"
+    },
+    "gpu": "NVIDIA GeForce RTX 3060 Laptop GPU",
+    "total_vram_mib": 6143.5,
+    "cuda_runtime": "12.6"
+  },
+  "provenance": {
+    "model_manifest_sha256": "d08f083fb9553e279856a6a8bb1003047db7e84ca30d5caa15b4341ce2d5db33",
+    "config_sha256": "d52f4a9138ff1ec5a1b7d6fa07bb87e49b311f86d6ae28a5e315af70e82a8a81",
+    "data_sha256": {
+      "train": "0360f967ae17c755f080f6bba937f29968ab55e00a2e09c7107dcf8675c789c7",
+      "dev": "a84755e3128f938b67e1dc45f91907f91bfce10c56c04cb4394e3c39e5d442c2",
+      "test": "f1fb8a6674483c10695c8f050acfd317fad30b7f0955fb012648954c36c4648d",
+      "smoke": "0e3db78afedafca469370c705ab20c4dde2bc755df720f08159f6aa83eb082ed"
+    }
+  },
+  "runtime_executed": 3,
+  "runtime_blocked": 10
+}

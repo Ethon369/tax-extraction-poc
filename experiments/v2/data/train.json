@@ -1,0 +1,1850 @@
+[
+  {
+    "id": "v2-base-train-01",
+    "category": "standard",
+    "template_family": "train-layout-01",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "请提取：开票日期2026-08-01；购买方模拟1号公司；税号TEST00000000000001；电缆，不含税金额117元，税率6%。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"extract\",\"data\":{\"invoice_date\":\"2026-08-01\",\"taxpayer_id\":\"TEST00000000000001\",\"buyer_name\":\"模拟1号公司\",\"items\":[{\"name\":\"电缆\",\"amount_without_tax\":117,\"tax_rate\":0.06,\"tax_amount\":null}],\"missing_fields\":[]},\"reason\":null}"
+      }
+    ],
+    "scenario": "v1_rehearsal"
+  },
+  {
+    "id": "v2-base-train-02",
+    "category": "standard",
+    "template_family": "train-layout-02",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "增值税发票\n买方：模拟2号公司\n购买方税号：TEST00000000000002\n日期：2026-08-02\n项目：培训，未税金额134，税率9%。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"extract\",\"data\":{\"invoice_date\":\"2026-08-02\",\"taxpayer_id\":\"TEST00000000000002\",\"buyer_name\":\"模拟2号公司\",\"items\":[{\"name\":\"培训\",\"amount_without_tax\":134,\"tax_rate\":0.09,\"tax_amount\":null}],\"missing_fields\":[]},\"reason\":null}"
+      }
+    ],
+    "scenario": "v1_rehearsal"
+  },
+  {
+    "id": "v2-base-train-03",
+    "category": "standard",
+    "template_family": "train-layout-03",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "单据信息：2026-08-03向模拟3号公司开具设备租赁发票，买方识别号TEST00000000000003，净额151元，税率1%。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"extract\",\"data\":{\"invoice_date\":\"2026-08-03\",\"taxpayer_id\":\"TEST00000000000003\",\"buyer_name\":\"模拟3号公司\",\"items\":[{\"name\":\"设备租赁\",\"amount_without_tax\":151,\"tax_rate\":0.01,\"tax_amount\":null}],\"missing_fields\":[]},\"reason\":null}"
+      }
+    ],
+    "scenario": "v1_rehearsal"
+  },
+  {
+    "id": "v2-base-train-04",
+    "category": "standard",
+    "template_family": "train-layout-04",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "录入这张票：货物纸张/未税168元/税率13%/开票2026-08-04/购方模拟4号公司/购方税号TEST00000000000004。第二项是墨盒，不含税金额50元，税率13%，税额6.50元。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"extract\",\"data\":{\"invoice_date\":\"2026-08-04\",\"taxpayer_id\":\"TEST00000000000004\",\"buyer_name\":\"模拟4号公司\",\"items\":[{\"name\":\"纸张\",\"amount_without_tax\":168,\"tax_rate\":0.13,\"tax_amount\":null},{\"name\":\"墨盒\",\"amount_without_tax\":50,\"tax_rate\":0.13,\"tax_amount\":6.5}],\"missing_fields\":[]},\"reason\":null}"
+      }
+    ],
+    "scenario": "v1_rehearsal"
+  },
+  {
+    "id": "v2-base-train-05",
+    "category": "standard",
+    "template_family": "train-layout-05",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "发票抬头=模拟5号公司，纳税人识别号=TEST00000000000005，开票日=2026-08-05；商品电缆；不含税价款185；税率6%。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"extract\",\"data\":{\"invoice_date\":\"2026-08-05\",\"taxpayer_id\":\"TEST00000000000005\",\"buyer_name\":\"模拟5号公司\",\"items\":[{\"name\":\"电缆\",\"amount_without_tax\":185,\"tax_rate\":0.06,\"tax_amount\":null}],\"missing_fields\":[]},\"reason\":null}"
+      }
+    ],
+    "scenario": "v1_rehearsal"
+  },
+  {
+    "id": "v2-base-train-06",
+    "category": "standard",
+    "template_family": "train-layout-06",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "模拟6号公司的报销附件：票面日期2026-08-06，税号TEST00000000000006，明细培训，金额为不含税202元，税率9%。仅提取。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"extract\",\"data\":{\"invoice_date\":\"2026-08-06\",\"taxpayer_id\":\"TEST00000000000006\",\"buyer_name\":\"模拟6号公司\",\"items\":[{\"name\":\"培训\",\"amount_without_tax\":202,\"tax_rate\":0.09,\"tax_amount\":null}],\"missing_fields\":[]},\"reason\":null}"
+      }
+    ],
+    "scenario": "v1_rehearsal"
+  },
+  {
+    "id": "v2-base-train-07",
+    "category": "standard",
+    "template_family": "train-layout-07",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "购买方[模拟7号公司] 税号[TEST00000000000007] 日期[2026-08-07]。请整理项目[设备租赁]，其未税价款为219元、税率1%。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"extract\",\"data\":{\"invoice_date\":\"2026-08-07\",\"taxpayer_id\":\"TEST00000000000007\",\"buyer_name\":\"模拟7号公司\",\"items\":[{\"name\":\"设备租赁\",\"amount_without_tax\":219,\"tax_rate\":0.01,\"tax_amount\":null}],\"missing_fields\":[]},\"reason\":null}"
+      }
+    ],
+    "scenario": "v1_rehearsal"
+  },
+  {
+    "id": "v2-base-train-08",
+    "category": "standard",
+    "template_family": "train-layout-08",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "票据转录：日期 2026-08-08；购货单位 模拟8号公司；购货税号 TEST00000000000008；服务 纸张；未税金额 236；税率 13%。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"extract\",\"data\":{\"invoice_date\":\"2026-08-08\",\"taxpayer_id\":\"TEST00000000000008\",\"buyer_name\":\"模拟8号公司\",\"items\":[{\"name\":\"纸张\",\"amount_without_tax\":236,\"tax_rate\":0.13,\"tax_amount\":null}],\"missing_fields\":[]},\"reason\":null}"
+      }
+    ],
+    "scenario": "v1_rehearsal"
+  },
+  {
+    "id": "v2-base-train-09",
+    "category": "standard",
+    "template_family": "train-layout-09",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "从下面提取JSON：买方模拟9号公司（TEST00000000000009），2026-08-09，电缆未税253元，税率6%。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"extract\",\"data\":{\"invoice_date\":\"2026-08-09\",\"taxpayer_id\":\"TEST00000000000009\",\"buyer_name\":\"模拟9号公司\",\"items\":[{\"name\":\"电缆\",\"amount_without_tax\":253,\"tax_rate\":0.06,\"tax_amount\":null}],\"missing_fields\":[]},\"reason\":null}"
+      }
+    ],
+    "scenario": "v1_rehearsal"
+  },
+  {
+    "id": "v2-base-train-10",
+    "category": "standard",
+    "template_family": "train-layout-10",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "单项发票记录——抬头模拟10号公司，识别号TEST00000000000010，开票日期2026-08-10。品名培训，不含税金额270元，税率9%。第二项是墨盒，不含税金额50元，税率13%，税额6.50元。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"extract\",\"data\":{\"invoice_date\":\"2026-08-10\",\"taxpayer_id\":\"TEST00000000000010\",\"buyer_name\":\"模拟10号公司\",\"items\":[{\"name\":\"培训\",\"amount_without_tax\":270,\"tax_rate\":0.09,\"tax_amount\":null},{\"name\":\"墨盒\",\"amount_without_tax\":50,\"tax_rate\":0.13,\"tax_amount\":6.5}],\"missing_fields\":[]},\"reason\":null}"
+      }
+    ],
+    "scenario": "v1_rehearsal"
+  },
+  {
+    "id": "v2-base-train-11",
+    "category": "standard",
+    "template_family": "train-layout-11",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "这张2026-08-11的票请保存字段：买家模拟11号公司，税号TEST00000000000011。收费项目设备租赁，未税金额287元，税率1%。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"extract\",\"data\":{\"invoice_date\":\"2026-08-11\",\"taxpayer_id\":\"TEST00000000000011\",\"buyer_name\":\"模拟11号公司\",\"items\":[{\"name\":\"设备租赁\",\"amount_without_tax\":287,\"tax_rate\":0.01,\"tax_amount\":null}],\"missing_fields\":[]},\"reason\":null}"
+      }
+    ],
+    "scenario": "v1_rehearsal"
+  },
+  {
+    "id": "v2-base-train-12",
+    "category": "standard",
+    "template_family": "train-layout-12",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "财务录入卡：模拟12号公司｜TEST00000000000012｜2026-08-12；纸张：不含税金额304元，税率13%。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"extract\",\"data\":{\"invoice_date\":\"2026-08-12\",\"taxpayer_id\":\"TEST00000000000012\",\"buyer_name\":\"模拟12号公司\",\"items\":[{\"name\":\"纸张\",\"amount_without_tax\":304,\"tax_rate\":0.13,\"tax_amount\":null}],\"missing_fields\":[]},\"reason\":null}"
+      }
+    ],
+    "scenario": "v1_rehearsal"
+  },
+  {
+    "id": "v2-base-train-13",
+    "category": "noisy",
+    "template_family": "train-layout-13",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "嗯，帮我录一下，模拟13号公司那张票，税号TEST00000000000013，开票2026-08-13。买的电缆，没税的价是321元，税率6%，谢谢。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"extract\",\"data\":{\"invoice_date\":\"2026-08-13\",\"taxpayer_id\":\"TEST00000000000013\",\"buyer_name\":\"模拟13号公司\",\"items\":[{\"name\":\"电缆\",\"amount_without_tax\":321,\"tax_rate\":0.06,\"tax_amount\":null}],\"missing_fields\":[]},\"reason\":null}"
+      }
+    ],
+    "scenario": "v1_rehearsal"
+  },
+  {
+    "id": "v2-base-train-14",
+    "category": "noisy",
+    "template_family": "train-layout-14",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "别管旁边的电话12345，票上买方是模拟14号公司、税号TEST00000000000014、日期2026-08-14；培训不含税金额338，税率9%。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"extract\",\"data\":{\"invoice_date\":\"2026-08-14\",\"taxpayer_id\":\"TEST00000000000014\",\"buyer_name\":\"模拟14号公司\",\"items\":[{\"name\":\"培训\",\"amount_without_tax\":338,\"tax_rate\":0.09,\"tax_amount\":null}],\"missing_fields\":[]},\"reason\":null}"
+      }
+    ],
+    "scenario": "v1_rehearsal"
+  },
+  {
+    "id": "v2-base-train-15",
+    "category": "noisy",
+    "template_family": "train-layout-15",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "上次说错了，这次只看这里：开票2026-08-15，模拟15号公司，税号TEST00000000000015，设备租赁未税355元、税率1%。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"extract\",\"data\":{\"invoice_date\":\"2026-08-15\",\"taxpayer_id\":\"TEST00000000000015\",\"buyer_name\":\"模拟15号公司\",\"items\":[{\"name\":\"设备租赁\",\"amount_without_tax\":355,\"tax_rate\":0.01,\"tax_amount\":null}],\"missing_fields\":[]},\"reason\":null}"
+      }
+    ],
+    "scenario": "v1_rehearsal"
+  },
+  {
+    "id": "v2-base-train-16",
+    "category": "noisy",
+    "template_family": "train-layout-16",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "有点乱的OCR：购 方 模拟16号公司；税号TEST00000000000016；开票2026-08-16；明细纸张；不含税372元；税率13%。整理一下。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"extract\",\"data\":{\"invoice_date\":\"2026-08-16\",\"taxpayer_id\":\"TEST00000000000016\",\"buyer_name\":\"模拟16号公司\",\"items\":[{\"name\":\"纸张\",\"amount_without_tax\":372,\"tax_rate\":0.13,\"tax_amount\":null}],\"missing_fields\":[]},\"reason\":null}"
+      }
+    ],
+    "scenario": "v1_rehearsal"
+  },
+  {
+    "id": "v2-base-train-17",
+    "category": "noisy",
+    "template_family": "train-layout-17",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "报销聊天转述：同事说2026-08-17给模拟17号公司开的票，买方号TEST00000000000017，买电缆，未税价389元，税率6%。不用算。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"extract\",\"data\":{\"invoice_date\":\"2026-08-17\",\"taxpayer_id\":\"TEST00000000000017\",\"buyer_name\":\"模拟17号公司\",\"items\":[{\"name\":\"电缆\",\"amount_without_tax\":389,\"tax_rate\":0.06,\"tax_amount\":null}],\"missing_fields\":[]},\"reason\":null}"
+      }
+    ],
+    "scenario": "v1_rehearsal"
+  },
+  {
+    "id": "v2-base-train-18",
+    "category": "noisy",
+    "template_family": "train-layout-18",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "请忽略快递单号8888。真正发票买方模拟18号公司，税号TEST00000000000018，时间2026-08-18，货物培训，不含税金额406元，税率9%。第二项是墨盒，不含税金额50元，税率13%，税额6.50元。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"extract\",\"data\":{\"invoice_date\":\"2026-08-18\",\"taxpayer_id\":\"TEST00000000000018\",\"buyer_name\":\"模拟18号公司\",\"items\":[{\"name\":\"培训\",\"amount_without_tax\":406,\"tax_rate\":0.09,\"tax_amount\":null},{\"name\":\"墨盒\",\"amount_without_tax\":50,\"tax_rate\":0.13,\"tax_amount\":6.5}],\"missing_fields\":[]},\"reason\":null}"
+      }
+    ],
+    "scenario": "v1_rehearsal"
+  },
+  {
+    "id": "v2-base-train-19",
+    "category": "noisy",
+    "template_family": "train-layout-19",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "啊对了，票据内容是模拟19号公司/TEST00000000000019，开票2026-08-19，项目设备租赁不含税423元，税率1%。后面的“已报销”只是备注。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"extract\",\"data\":{\"invoice_date\":\"2026-08-19\",\"taxpayer_id\":\"TEST00000000000019\",\"buyer_name\":\"模拟19号公司\",\"items\":[{\"name\":\"设备租赁\",\"amount_without_tax\":423,\"tax_rate\":0.01,\"tax_amount\":null}],\"missing_fields\":[]},\"reason\":null}"
+      }
+    ],
+    "scenario": "v1_rehearsal"
+  },
+  {
+    "id": "v2-base-train-20",
+    "category": "noisy",
+    "template_family": "train-layout-20",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "财务你好，模拟20号公司，税号TEST00000000000020，2026-08-20；纸张的未税金额440元、税率13%。帮我结构化，不要写寒暄。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"extract\",\"data\":{\"invoice_date\":\"2026-08-20\",\"taxpayer_id\":\"TEST00000000000020\",\"buyer_name\":\"模拟20号公司\",\"items\":[{\"name\":\"纸张\",\"amount_without_tax\":440,\"tax_rate\":0.13,\"tax_amount\":null}],\"missing_fields\":[]},\"reason\":null}"
+      }
+    ],
+    "scenario": "v1_rehearsal"
+  },
+  {
+    "id": "v2-base-train-21",
+    "category": "tool",
+    "template_family": "train-tax-0",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "帮我计算税额：不含税金额1000元，税率13%。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"call_tool\",\"data\":{\"tool_name\":\"calculate_tax_amount\",\"parameters\":{\"amount_without_tax\":1000,\"tax_rate\":0.13}},\"reason\":null}"
+      }
+    ],
+    "scenario": "v1_rehearsal"
+  },
+  {
+    "id": "v2-base-train-22",
+    "category": "tool",
+    "template_family": "train-tax-1",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "请调用税额计算工具，未税金额240元，税率6%。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"call_tool\",\"data\":{\"tool_name\":\"calculate_tax_amount\",\"parameters\":{\"amount_without_tax\":240,\"tax_rate\":0.06}},\"reason\":null}"
+      }
+    ],
+    "scenario": "v1_rehearsal"
+  },
+  {
+    "id": "v2-base-train-23",
+    "category": "tool",
+    "template_family": "train-tax-2",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "这笔不含税价款750元，税率9%，求税额。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"call_tool\",\"data\":{\"tool_name\":\"calculate_tax_amount\",\"parameters\":{\"amount_without_tax\":750,\"tax_rate\":0.09}},\"reason\":null}"
+      }
+    ],
+    "scenario": "v1_rehearsal"
+  },
+  {
+    "id": "v2-base-train-24",
+    "category": "tool",
+    "template_family": "train-tax-3",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "我只要税金的计算指令：净额300元；征收率1%。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"call_tool\",\"data\":{\"tool_name\":\"calculate_tax_amount\",\"parameters\":{\"amount_without_tax\":300,\"tax_rate\":0.01}},\"reason\":null}"
+      }
+    ],
+    "scenario": "v1_rehearsal"
+  },
+  {
+    "id": "v2-base-train-25",
+    "category": "tool",
+    "template_family": "train-tax-4",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "执行calculate_tax_amount，不含税金额88.5元、税率13%。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"call_tool\",\"data\":{\"tool_name\":\"calculate_tax_amount\",\"parameters\":{\"amount_without_tax\":88.5,\"tax_rate\":0.13}},\"reason\":null}"
+      }
+    ],
+    "scenario": "v1_rehearsal"
+  },
+  {
+    "id": "v2-base-train-26",
+    "category": "tool",
+    "template_family": "train-ded-0",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "已知税额130元，可抵扣比例100%，帮我算进项抵扣额。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"call_tool\",\"data\":{\"tool_name\":\"calculate_vat_deduction\",\"parameters\":{\"tax_amount\":130,\"deductible_ratio\":1}},\"reason\":null}"
+      }
+    ],
+    "scenario": "v1_rehearsal"
+  },
+  {
+    "id": "v2-base-train-27",
+    "category": "tool",
+    "template_family": "train-ded-1",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "请生成抵扣计算调用：税额60元，抵扣比例50%。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"call_tool\",\"data\":{\"tool_name\":\"calculate_vat_deduction\",\"parameters\":{\"tax_amount\":60,\"deductible_ratio\":0.5}},\"reason\":null}"
+      }
+    ],
+    "scenario": "v1_rehearsal"
+  },
+  {
+    "id": "v2-base-train-28",
+    "category": "tool",
+    "template_family": "train-ded-2",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "税金90元，允许抵扣比例80%，计算可抵扣数额。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"call_tool\",\"data\":{\"tool_name\":\"calculate_vat_deduction\",\"parameters\":{\"tax_amount\":90,\"deductible_ratio\":0.8}},\"reason\":null}"
+      }
+    ],
+    "scenario": "v1_rehearsal"
+  },
+  {
+    "id": "v2-base-train-29",
+    "category": "tool",
+    "template_family": "train-ded-3",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "本次按给定条件算：税额27.5元，可抵扣份额20%。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"call_tool\",\"data\":{\"tool_name\":\"calculate_vat_deduction\",\"parameters\":{\"tax_amount\":27.5,\"deductible_ratio\":0.2}},\"reason\":null}"
+      }
+    ],
+    "scenario": "v1_rehearsal"
+  },
+  {
+    "id": "v2-base-train-30",
+    "category": "tool",
+    "template_family": "train-ded-4",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "调用calculate_vat_deduction，税额99元，抵扣比例0%。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"call_tool\",\"data\":{\"tool_name\":\"calculate_vat_deduction\",\"parameters\":{\"tax_amount\":99,\"deductible_ratio\":0}},\"reason\":null}"
+      }
+    ],
+    "scenario": "v1_rehearsal"
+  },
+  {
+    "id": "v2-base-train-31",
+    "category": "missing",
+    "template_family": "train-missing-id",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "提取发票：2026-08-25，模拟缺号公司，税号没写；纸张未税200元、税率13%。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"extract\",\"data\":{\"invoice_date\":\"2026-08-25\",\"taxpayer_id\":null,\"buyer_name\":\"模拟缺号公司\",\"items\":[{\"name\":\"纸张\",\"amount_without_tax\":200,\"tax_rate\":0.13,\"tax_amount\":null}],\"missing_fields\":[\"taxpayer_id\"]},\"reason\":null}"
+      }
+    ],
+    "scenario": "v1_rehearsal"
+  },
+  {
+    "id": "v2-base-train-32",
+    "category": "missing",
+    "template_family": "train-missing-amount",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "购买方模拟模糊公司，税号TEST00000000000032，开票2026-08-26，办公桌未税金额看不清，税率13%。请提取。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"extract\",\"data\":{\"invoice_date\":\"2026-08-26\",\"taxpayer_id\":\"TEST00000000000032\",\"buyer_name\":\"模拟模糊公司\",\"items\":[{\"name\":\"办公桌\",\"amount_without_tax\":null,\"tax_rate\":0.13,\"tax_amount\":null}],\"missing_fields\":[\"items.0.amount_without_tax\"]},\"reason\":null}"
+      }
+    ],
+    "scenario": "v1_rehearsal"
+  },
+  {
+    "id": "v2-base-train-33",
+    "category": "missing",
+    "template_family": "train-missing-date",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "日期无法辨认。买方模拟无日公司，税号TEST00000000000033。维修未税500元，税率6%，请整理。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"extract\",\"data\":{\"invoice_date\":null,\"taxpayer_id\":\"TEST00000000000033\",\"buyer_name\":\"模拟无日公司\",\"items\":[{\"name\":\"维修\",\"amount_without_tax\":500,\"tax_rate\":0.06,\"tax_amount\":null}],\"missing_fields\":[\"invoice_date\"]},\"reason\":null}"
+      }
+    ],
+    "scenario": "v1_rehearsal"
+  },
+  {
+    "id": "v2-base-train-34",
+    "category": "missing",
+    "template_family": "train-missing-rate",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "开票2026-08-28，模拟无率公司，税号TEST00000000000034；电缆未税600元，税率未注明，只提取原文。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"extract\",\"data\":{\"invoice_date\":\"2026-08-28\",\"taxpayer_id\":\"TEST00000000000034\",\"buyer_name\":\"模拟无率公司\",\"items\":[{\"name\":\"电缆\",\"amount_without_tax\":600,\"tax_rate\":null,\"tax_amount\":null}],\"missing_fields\":[\"items.0.tax_rate\"]},\"reason\":null}"
+      }
+    ],
+    "scenario": "v1_rehearsal"
+  },
+  {
+    "id": "v2-base-train-35",
+    "category": "missing",
+    "template_family": "train-missing-ded-ratio",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "帮我算抵扣额：税额100元，但是没提供抵扣比例。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"fallback\",\"data\":null,\"reason\":\"insufficient_information\"}"
+      }
+    ],
+    "scenario": "v1_rehearsal"
+  },
+  {
+    "id": "v2-base-train-36",
+    "category": "missing",
+    "template_family": "train-missing-tax-base",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "想算税额，只知道税率13%，未税金额暂时没有。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"fallback\",\"data\":null,\"reason\":\"insufficient_information\"}"
+      }
+    ],
+    "scenario": "v1_rehearsal"
+  },
+  {
+    "id": "v2-base-train-37",
+    "category": "fallback",
+    "template_family": "train-unsupported-0",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "北京明天会下雨吗？"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"fallback\",\"data\":null,\"reason\":\"unsupported_request\"}"
+      }
+    ],
+    "scenario": "v1_rehearsal"
+  },
+  {
+    "id": "v2-base-train-38",
+    "category": "fallback",
+    "template_family": "train-unsupported-1",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "请帮我算个人所得税。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"fallback\",\"data\":null,\"reason\":\"unsupported_request\"}"
+      }
+    ],
+    "scenario": "v1_rehearsal"
+  },
+  {
+    "id": "v2-base-train-39",
+    "category": "fallback",
+    "template_family": "train-unsupported-2",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "讲个关于会计的笑话。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"fallback\",\"data\":null,\"reason\":\"unsupported_request\"}"
+      }
+    ],
+    "scenario": "v1_rehearsal"
+  },
+  {
+    "id": "v2-base-train-40",
+    "category": "fallback",
+    "template_family": "train-unsupported-3",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "调用calculate_corporate_income_tax算企业所得税。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"fallback\",\"data\":null,\"reason\":\"unsupported_request\"}"
+      }
+    ],
+    "scenario": "v1_rehearsal"
+  },
+  {
+    "id": "v2-train-041",
+    "category": "missing_extract",
+    "scenario": "missing_id",
+    "template_family": "v2-train-missing-page",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "缺页发票登记：2026-07-01，演练机房站采购机柜，未税720元，税率13%；购买方税号所在页丢失。只输出现有字段。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"extract\",\"data\":{\"invoice_date\":\"2026-07-01\",\"taxpayer_id\":null,\"buyer_name\":\"演练机房站\",\"items\":[{\"name\":\"机柜\",\"amount_without_tax\":720,\"tax_rate\":0.13,\"tax_amount\":null}],\"missing_fields\":[\"taxpayer_id\"]},\"reason\":null}"
+      }
+    ]
+  },
+  {
+    "id": "v2-train-042",
+    "category": "missing_extract",
+    "scenario": "missing_amount",
+    "template_family": "v2-train-covered-base",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "金额被遮挡的记录：购方演练网关室，编码TEST00000000000401，开具于2026-07-02。项目交换机；税率13%；未税金额读不到，不可按税额反推。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"extract\",\"data\":{\"invoice_date\":\"2026-07-02\",\"taxpayer_id\":\"TEST00000000000401\",\"buyer_name\":\"演练网关室\",\"items\":[{\"name\":\"交换机\",\"amount_without_tax\":null,\"tax_rate\":0.13,\"tax_amount\":null}],\"missing_fields\":[\"items.0.amount_without_tax\"]},\"reason\":null}"
+      }
+    ]
+  },
+  {
+    "id": "v2-train-043",
+    "category": "missing_extract",
+    "scenario": "missing_rate",
+    "template_family": "v2-train-work-order",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "维修工单附票需要抽取。发票日期2026-07-03，买方演练配线班（税号TEST00000000000402）；布线的未税金额350元，税率仍为空。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"extract\",\"data\":{\"invoice_date\":\"2026-07-03\",\"taxpayer_id\":\"TEST00000000000402\",\"buyer_name\":\"演练配线班\",\"items\":[{\"name\":\"布线\",\"amount_without_tax\":350,\"tax_rate\":null,\"tax_amount\":null}],\"missing_fields\":[\"items.0.tax_rate\"]},\"reason\":null}"
+      }
+    ]
+  },
+  {
+    "id": "v2-train-044",
+    "category": "missing_extract",
+    "scenario": "multiple_missing",
+    "template_family": "v2-train-fragment",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "残片上仅见：2026-07-04、购买方演练计量组、项目电表；税号和不含税价款均未识别，税率13%。请保留未知字段。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"extract\",\"data\":{\"invoice_date\":\"2026-07-04\",\"taxpayer_id\":null,\"buyer_name\":\"演练计量组\",\"items\":[{\"name\":\"电表\",\"amount_without_tax\":null,\"tax_rate\":0.13,\"tax_amount\":null}],\"missing_fields\":[\"items.0.amount_without_tax\",\"taxpayer_id\"]},\"reason\":null}"
+      }
+    ]
+  },
+  {
+    "id": "v2-train-045",
+    "category": "missing_extract",
+    "scenario": "multiple_missing",
+    "template_family": "v2-train-register-not-calculate",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "演练遥测室，识别号TEST00000000000403，开票日期2026-07-05。遥测服务的税率未知，不含税金额也没有提供；目标是登记而非计算。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"extract\",\"data\":{\"invoice_date\":\"2026-07-05\",\"taxpayer_id\":\"TEST00000000000403\",\"buyer_name\":\"演练遥测室\",\"items\":[{\"name\":\"遥测服务\",\"amount_without_tax\":null,\"tax_rate\":null,\"tax_amount\":null}],\"missing_fields\":[\"items.0.amount_without_tax\",\"items.0.tax_rate\"]},\"reason\":null}"
+      }
+    ]
+  },
+  {
+    "id": "v2-train-046",
+    "category": "missing_extract",
+    "scenario": "missing_rate",
+    "template_family": "v2-train-second-line-rate",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "两行明细摘抄：演练供电所，TEST00000000000404，2026-07-06。先列插座：未税90元，税率13%；后列巡检：未税160元，税率未录。请保持顺序。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"extract\",\"data\":{\"invoice_date\":\"2026-07-06\",\"taxpayer_id\":\"TEST00000000000404\",\"buyer_name\":\"演练供电所\",\"items\":[{\"name\":\"插座\",\"amount_without_tax\":90,\"tax_rate\":0.13,\"tax_amount\":null},{\"name\":\"巡检\",\"amount_without_tax\":160,\"tax_rate\":null,\"tax_amount\":null}],\"missing_fields\":[\"items.1.tax_rate\"]},\"reason\":null}"
+      }
+    ]
+  },
+  {
+    "id": "v2-train-047",
+    "category": "missing_extract",
+    "scenario": "missing_amount",
+    "template_family": "v2-train-first-line-base",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "需要字段化的采购摘要：2026-07-07开票给演练终端队，税号TEST00000000000405；第一项电源模块，价格没有抄到，税率13%；第二项线槽，未税42元，税率13%。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"extract\",\"data\":{\"invoice_date\":\"2026-07-07\",\"taxpayer_id\":\"TEST00000000000405\",\"buyer_name\":\"演练终端队\",\"items\":[{\"name\":\"电源模块\",\"amount_without_tax\":null,\"tax_rate\":0.13,\"tax_amount\":null},{\"name\":\"线槽\",\"amount_without_tax\":42,\"tax_rate\":0.13,\"tax_amount\":null}],\"missing_fields\":[\"items.0.amount_without_tax\"]},\"reason\":null}"
+      }
+    ]
+  },
+  {
+    "id": "v2-train-048",
+    "category": "missing_extract",
+    "scenario": "missing_id",
+    "template_family": "v2-train-phone-not-id",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "核对一张票而不补全：演练负荷组为买方，日期2026-07-08，负荷测量未税金额250元，税率6%。旁边的电话12345678不是买方税号，税号栏没有内容。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"extract\",\"data\":{\"invoice_date\":\"2026-07-08\",\"taxpayer_id\":null,\"buyer_name\":\"演练负荷组\",\"items\":[{\"name\":\"负荷测量\",\"amount_without_tax\":250,\"tax_rate\":0.06,\"tax_amount\":null}],\"missing_fields\":[\"taxpayer_id\"]},\"reason\":null}"
+      }
+    ]
+  },
+  {
+    "id": "v2-train-049",
+    "category": "missing_extract",
+    "scenario": "missing_amount",
+    "template_family": "v2-train-vague-price",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "请把这条口述转成JSON：演练电池组在2026-07-09收到蓄电池发票，税号TEST00000000000406；税率13%，未税金额只记得大概几百元。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"extract\",\"data\":{\"invoice_date\":\"2026-07-09\",\"taxpayer_id\":\"TEST00000000000406\",\"buyer_name\":\"演练电池组\",\"items\":[{\"name\":\"蓄电池\",\"amount_without_tax\":null,\"tax_rate\":0.13,\"tax_amount\":null}],\"missing_fields\":[\"items.0.amount_without_tax\"]},\"reason\":null}"
+      }
+    ]
+  },
+  {
+    "id": "v2-train-050",
+    "category": "missing_extract",
+    "scenario": "multiple_missing",
+    "template_family": "v2-train-explicit-not-zero",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "票据映射任务：抬头演练传感组，开具2026-07-10，探头税率13%；没有清晰的税号，没有确定未税价款。不能用0表示这些缺失。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"extract\",\"data\":{\"invoice_date\":\"2026-07-10\",\"taxpayer_id\":null,\"buyer_name\":\"演练传感组\",\"items\":[{\"name\":\"探头\",\"amount_without_tax\":null,\"tax_rate\":0.13,\"tax_amount\":null}],\"missing_fields\":[\"items.0.amount_without_tax\",\"taxpayer_id\"]},\"reason\":null}"
+      }
+    ]
+  },
+  {
+    "id": "v2-train-051",
+    "category": "missing_extract",
+    "scenario": "missing_id",
+    "template_family": "v2-train-zero-versus-null",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "已确认字段只有日期2026-07-11、受票单位演练继保室、商品继电器、未税金额0元、税率0%。税号未留；请忠实保留两个零值。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"extract\",\"data\":{\"invoice_date\":\"2026-07-11\",\"taxpayer_id\":null,\"buyer_name\":\"演练继保室\",\"items\":[{\"name\":\"继电器\",\"amount_without_tax\":0,\"tax_rate\":0,\"tax_amount\":null}],\"missing_fields\":[\"taxpayer_id\"]},\"reason\":null}"
+      }
+    ]
+  },
+  {
+    "id": "v2-train-052",
+    "category": "missing_extract",
+    "scenario": "multiple_missing",
+    "template_family": "v2-train-date-and-base",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "仪表附件摘要：买方演练仪表班、买方号TEST00000000000407、项目电压表。发票日期不可辨，未税价格不可辨，税率13%。请抽取可见信息。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"extract\",\"data\":{\"invoice_date\":null,\"taxpayer_id\":\"TEST00000000000407\",\"buyer_name\":\"演练仪表班\",\"items\":[{\"name\":\"电压表\",\"amount_without_tax\":null,\"tax_rate\":0.13,\"tax_amount\":null}],\"missing_fields\":[\"invoice_date\",\"items.0.amount_without_tax\"]},\"reason\":null}"
+      }
+    ]
+  },
+  {
+    "id": "v2-train-053",
+    "category": "missing_extract",
+    "scenario": "missing_rate",
+    "template_family": "v2-train-quantity-not-rate",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "采购票上的报价不是税率。演练箱变组，编号TEST00000000000408，2026-07-13，箱体未税890元；备注订单量6件，税率缺失。只登记。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"extract\",\"data\":{\"invoice_date\":\"2026-07-13\",\"taxpayer_id\":\"TEST00000000000408\",\"buyer_name\":\"演练箱变组\",\"items\":[{\"name\":\"箱体\",\"amount_without_tax\":890,\"tax_rate\":null,\"tax_amount\":null}],\"missing_fields\":[\"items.0.tax_rate\"]},\"reason\":null}"
+      }
+    ]
+  },
+  {
+    "id": "v2-train-054",
+    "category": "missing_extract",
+    "scenario": "missing_amount",
+    "template_family": "v2-train-no-reverse-calculation",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "扫描结果请整理：演练检修队；税号TEST00000000000409；开票2026-07-14；检修；税率6%；票面税额18元，未税价款丢失。不要从税额推算未税金额。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"extract\",\"data\":{\"invoice_date\":\"2026-07-14\",\"taxpayer_id\":\"TEST00000000000409\",\"buyer_name\":\"演练检修队\",\"items\":[{\"name\":\"检修\",\"amount_without_tax\":null,\"tax_rate\":0.06,\"tax_amount\":18}],\"missing_fields\":[\"items.0.amount_without_tax\"]},\"reason\":null}"
+      }
+    ]
+  },
+  {
+    "id": "v2-train-055",
+    "category": "missing_extract",
+    "scenario": "multiple_missing",
+    "template_family": "v2-train-mixed-missing-paths",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "演练台区组的2026-07-15票据录入：通信卡未税20元、税率空白；安装未税金额未知、税率6%。购买方税号未显示。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"extract\",\"data\":{\"invoice_date\":\"2026-07-15\",\"taxpayer_id\":null,\"buyer_name\":\"演练台区组\",\"items\":[{\"name\":\"通信卡\",\"amount_without_tax\":20,\"tax_rate\":null,\"tax_amount\":null},{\"name\":\"安装\",\"amount_without_tax\":null,\"tax_rate\":0.06,\"tax_amount\":null}],\"missing_fields\":[\"items.0.tax_rate\",\"items.1.amount_without_tax\",\"taxpayer_id\"]},\"reason\":null}"
+      }
+    ]
+  },
+  {
+    "id": "v2-train-056",
+    "category": "missing_extract",
+    "scenario": "missing_rate",
+    "template_family": "v2-train-rate-not-derived",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "抽取这张部分完整的凭证：发票给演练定位室，TEST00000000000410，2026-07-16，定位服务未税300元，税额已抄为18元，税率本身没有抄下，不能反推。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"extract\",\"data\":{\"invoice_date\":\"2026-07-16\",\"taxpayer_id\":\"TEST00000000000410\",\"buyer_name\":\"演练定位室\",\"items\":[{\"name\":\"定位服务\",\"amount_without_tax\":300,\"tax_rate\":null,\"tax_amount\":18}],\"missing_fields\":[\"items.0.tax_rate\"]},\"reason\":null}"
+      }
+    ]
+  },
+  {
+    "id": "v2-train-057",
+    "category": "tool",
+    "scenario": "valid_tool",
+    "template_family": "v2-train-valid-0",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "以明确参数建立税额调用，不含税金额0元、税率13%，零金额不是缺失。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"call_tool\",\"data\":{\"tool_name\":\"calculate_tax_amount\",\"parameters\":{\"amount_without_tax\":0,\"tax_rate\":0.13}},\"reason\":null}"
+      }
+    ]
+  },
+  {
+    "id": "v2-train-058",
+    "category": "tool",
+    "scenario": "valid_tool",
+    "template_family": "v2-train-valid-1",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "这次征收率0%，净额560元，请计算税金。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"call_tool\",\"data\":{\"tool_name\":\"calculate_tax_amount\",\"parameters\":{\"amount_without_tax\":560,\"tax_rate\":0}},\"reason\":null}"
+      }
+    ]
+  },
+  {
+    "id": "v2-train-059",
+    "category": "tool",
+    "scenario": "valid_tool",
+    "template_family": "v2-train-valid-2",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "数值已审核：税率0.06；未税金额81.25元。生成税额计算请求。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"call_tool\",\"data\":{\"tool_name\":\"calculate_tax_amount\",\"parameters\":{\"amount_without_tax\":81.25,\"tax_rate\":0.06}},\"reason\":null}"
+      }
+    ]
+  },
+  {
+    "id": "v2-train-060",
+    "category": "tool",
+    "scenario": "valid_tool",
+    "template_family": "v2-train-valid-3",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "请运行calculate_tax_amount，计税金额=640元，税率=9%。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"call_tool\",\"data\":{\"tool_name\":\"calculate_tax_amount\",\"parameters\":{\"amount_without_tax\":640,\"tax_rate\":0.09}},\"reason\":null}"
+      }
+    ]
+  },
+  {
+    "id": "v2-train-061",
+    "category": "tool",
+    "scenario": "valid_tool",
+    "template_family": "v2-train-valid-4",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "可抵扣比例0%，税额33元，请按显式条件计算，不是缺参数。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"call_tool\",\"data\":{\"tool_name\":\"calculate_vat_deduction\",\"parameters\":{\"tax_amount\":33,\"deductible_ratio\":0}},\"reason\":null}"
+      }
+    ]
+  },
+  {
+    "id": "v2-train-062",
+    "category": "tool",
+    "scenario": "valid_tool",
+    "template_family": "v2-train-valid-5",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "按给出的可抵扣份额100%和税金24元，输出抵扣计算函数。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"call_tool\",\"data\":{\"tool_name\":\"calculate_vat_deduction\",\"parameters\":{\"tax_amount\":24,\"deductible_ratio\":1}},\"reason\":null}"
+      }
+    ]
+  },
+  {
+    "id": "v2-train-063",
+    "category": "tool",
+    "scenario": "valid_tool",
+    "template_family": "v2-train-valid-6",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "仅做数值计算：税额=12.5元，抵扣比例=0.4。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"call_tool\",\"data\":{\"tool_name\":\"calculate_vat_deduction\",\"parameters\":{\"tax_amount\":12.5,\"deductible_ratio\":0.4}},\"reason\":null}"
+      }
+    ]
+  },
+  {
+    "id": "v2-train-064",
+    "category": "tool",
+    "scenario": "valid_tool",
+    "template_family": "v2-train-valid-7",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "希望得到calculate_vat_deduction调用。允许抵扣比例25%，税额48元，条件都已明确。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"call_tool\",\"data\":{\"tool_name\":\"calculate_vat_deduction\",\"parameters\":{\"tax_amount\":48,\"deductible_ratio\":0.25}},\"reason\":null}"
+      }
+    ]
+  },
+  {
+    "id": "v2-train-065",
+    "category": "fallback",
+    "scenario": "insufficient_information",
+    "template_family": "v2-train-insufficient-0",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "生成税额计算调用；不含税金额170元，但税率完全未提供。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"fallback\",\"data\":null,\"reason\":\"insufficient_information\"}"
+      }
+    ]
+  },
+  {
+    "id": "v2-train-066",
+    "category": "fallback",
+    "scenario": "insufficient_information",
+    "template_family": "v2-train-insufficient-1",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "税率9%可以确认，可惜未税价款还没有数值。现在需要计算税金。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"fallback\",\"data\":null,\"reason\":\"insufficient_information\"}"
+      }
+    ]
+  },
+  {
+    "id": "v2-train-067",
+    "category": "fallback",
+    "scenario": "insufficient_information",
+    "template_family": "v2-train-insufficient-2",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "税额18元，请给出抵扣计算指令；抵扣比例未知，不得假设为100%。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"fallback\",\"data\":null,\"reason\":\"insufficient_information\"}"
+      }
+    ]
+  },
+  {
+    "id": "v2-train-068",
+    "category": "fallback",
+    "scenario": "insufficient_information",
+    "template_family": "v2-train-insufficient-3",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "抵扣比例50%已明确，税额仍待补充，帮我计算可抵扣额。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"fallback\",\"data\":null,\"reason\":\"insufficient_information\"}"
+      }
+    ]
+  },
+  {
+    "id": "v2-train-069",
+    "category": "fallback",
+    "scenario": "insufficient_information",
+    "template_family": "v2-train-insufficient-4",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "只提供一张金额为空、税率也空白的单据，却要直接计算税额。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"fallback\",\"data\":null,\"reason\":\"insufficient_information\"}"
+      }
+    ]
+  },
+  {
+    "id": "v2-train-070",
+    "category": "fallback",
+    "scenario": "insufficient_information",
+    "template_family": "v2-train-insufficient-5",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "计算进项抵扣：未税金额500元，税率6%；没有直接提供税额和抵扣比例，不要推算参数。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"fallback\",\"data\":null,\"reason\":\"insufficient_information\"}"
+      }
+    ]
+  },
+  {
+    "id": "v2-train-071",
+    "category": "fallback",
+    "scenario": "insufficient_information",
+    "template_family": "v2-train-insufficient-6",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "计算税额的草稿中同时写了不含税金额100元与不含税金额200元，税率13%，没有说明哪个有效。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"fallback\",\"data\":null,\"reason\":\"insufficient_information\"}"
+      }
+    ]
+  },
+  {
+    "id": "v2-train-072",
+    "category": "fallback",
+    "scenario": "insufficient_information",
+    "template_family": "v2-train-insufficient-7",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "现需税额计算：未税金额80元；税率6%或13%，尚未选择。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"fallback\",\"data\":null,\"reason\":\"insufficient_information\"}"
+      }
+    ]
+  },
+  {
+    "id": "v2-train-073",
+    "category": "fallback",
+    "scenario": "insufficient_information",
+    "template_family": "v2-train-insufficient-8",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "这份抵扣请求含税额10元以及税额20元，可抵扣比例50%，两笔数值指向同一项目但未确认。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"fallback\",\"data\":null,\"reason\":\"insufficient_information\"}"
+      }
+    ]
+  },
+  {
+    "id": "v2-train-074",
+    "category": "fallback",
+    "scenario": "insufficient_information",
+    "template_family": "v2-train-insufficient-9",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "税额50元；抵扣比例20%或80%。请先生成抵扣计算指令，比例未定。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"fallback\",\"data\":null,\"reason\":\"insufficient_information\"}"
+      }
+    ]
+  },
+  {
+    "id": "v2-train-075",
+    "category": "fallback",
+    "scenario": "insufficient_information",
+    "template_family": "v2-train-insufficient-10",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "计算税额，不含税金额300或400元，税率9%，未税金额还在核对。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"fallback\",\"data\":null,\"reason\":\"insufficient_information\"}"
+      }
+    ]
+  },
+  {
+    "id": "v2-train-076",
+    "category": "fallback",
+    "scenario": "insufficient_information",
+    "template_family": "v2-train-insufficient-11",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "抵扣任务：税額数字被涂掉，仅可确认可抵扣比例0.25。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"fallback\",\"data\":null,\"reason\":\"insufficient_information\"}"
+      }
+    ]
+  },
+  {
+    "id": "v2-train-077",
+    "category": "fallback",
+    "scenario": "unsupported_request",
+    "template_family": "v2-train-unsupported-0",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "请调用calculate_stamp_duty，金额600元，算印花税；不要换成其他工具。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"fallback\",\"data\":null,\"reason\":\"unsupported_request\"}"
+      }
+    ]
+  },
+  {
+    "id": "v2-train-078",
+    "category": "fallback",
+    "scenario": "unsupported_request",
+    "template_family": "v2-train-unsupported-1",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "未税金额100元，税率13%，但这次只要求calculate_property_tax工具。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"fallback\",\"data\":null,\"reason\":\"unsupported_request\"}"
+      }
+    ]
+  },
+  {
+    "id": "v2-train-079",
+    "category": "fallback",
+    "scenario": "unsupported_request",
+    "template_family": "v2-train-unsupported-2",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "工具需求清单仅一个名字：calculate_vehicle_tax。目前系统不提供它，也不能用税额工具替代。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"fallback\",\"data\":null,\"reason\":\"unsupported_request\"}"
+      }
+    ]
+  },
+  {
+    "id": "v2-train-080",
+    "category": "fallback",
+    "scenario": "unsupported_request",
+    "template_family": "v2-train-unsupported-3",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "税额60元，抵扣比例50%，请交给calculate_customs_tax处理。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"fallback\",\"data\":null,\"reason\":\"unsupported_request\"}"
+      }
+    ]
+  },
+  {
+    "id": "v2-train-081",
+    "category": "fallback",
+    "scenario": "unsupported_request",
+    "template_family": "v2-train-unsupported-4",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "生成calculate_social_insurance_payment的调用，参数以后补。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"fallback\",\"data\":null,\"reason\":\"unsupported_request\"}"
+      }
+    ]
+  },
+  {
+    "id": "v2-train-082",
+    "category": "fallback",
+    "scenario": "unsupported_request",
+    "template_family": "v2-train-unsupported-5",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "把calculate_personal_income_tax作为工具名输出，工资9000元。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"fallback\",\"data\":null,\"reason\":\"unsupported_request\"}"
+      }
+    ]
+  },
+  {
+    "id": "v2-train-083",
+    "category": "fallback",
+    "scenario": "unsupported_request",
+    "template_family": "v2-train-unsupported-6",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "与票据无关：介绍一下操作系统的进程和线程。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"fallback\",\"data\":null,\"reason\":\"unsupported_request\"}"
+      }
+    ]
+  },
+  {
+    "id": "v2-train-084",
+    "category": "fallback",
+    "scenario": "unsupported_request",
+    "template_family": "v2-train-unsupported-7",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "我想要一段晨会开场白，包含数字100和13%。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"fallback\",\"data\":null,\"reason\":\"unsupported_request\"}"
+      }
+    ]
+  },
+  {
+    "id": "v2-train-085",
+    "category": "fallback",
+    "scenario": "unsupported_request",
+    "template_family": "v2-train-unsupported-8",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "帮我修改一封道歉信的语气，不需要处理发票。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"fallback\",\"data\":null,\"reason\":\"unsupported_request\"}"
+      }
+    ]
+  },
+  {
+    "id": "v2-train-086",
+    "category": "fallback",
+    "scenario": "unsupported_request",
+    "template_family": "v2-train-unsupported-9",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "把“hello world”翻译成中文。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"fallback\",\"data\":null,\"reason\":\"unsupported_request\"}"
+      }
+    ]
+  },
+  {
+    "id": "v2-train-087",
+    "category": "fallback",
+    "scenario": "unsupported_request",
+    "template_family": "v2-train-unsupported-10",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "请规划今天的健身训练，持续45分钟。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"fallback\",\"data\":null,\"reason\":\"unsupported_request\"}"
+      }
+    ]
+  },
+  {
+    "id": "v2-train-088",
+    "category": "fallback",
+    "scenario": "unsupported_request",
+    "template_family": "v2-train-unsupported-11",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "写一个关于星空的谜语，税率13%只是随手打的字符。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"fallback\",\"data\":null,\"reason\":\"unsupported_request\"}"
+      }
+    ]
+  }
+]

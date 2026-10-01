@@ -1,0 +1,35 @@
+COMMAND ['scripts/build_data.py']
+V2_DATA_FROZEN {'train': 88, 'dev': 24, 'smoke': 6, 'test': 26}
+COMMAND ['scripts/check_data.py', '--tokenizer']
+V2_DATA_AUDIT {'counts': {'train': 88, 'dev': 24, 'test': 26, 'smoke': 6}, 'normalized_duplicates': 0, 'maximum_cross_split_similarity': 0.8163265306122449, 'closest_pair': ['v2-base-train-21', 'v2-base-smoke-01'], 'near_duplicate_threshold': 0.85, 'human_review': 'Assistant-authored synthetic labels; user review pending.', 'v1_files_verified': 64, 'v2_data_hashes_verified': True}
+COMMAND ['-m', 'unittest', 'discover', '-s', 'tests', '-v']
+test_blocked_wrong_call_still_counts_as_model_failure (test_boundaries.BoundaryTests.test_blocked_wrong_call_still_counts_as_model_failure) ... ok
+test_each_missing_calculation_slot_blocked (test_boundaries.BoundaryTests.test_each_missing_calculation_slot_blocked) ... ok
+test_multiple_nulls_and_missing_paths_consistent (test_boundaries.BoundaryTests.test_multiple_nulls_and_missing_paths_consistent) ... ok
+test_perfect_missing_predictions_and_malformed_denominator (test_boundaries.BoundaryTests.test_perfect_missing_predictions_and_malformed_denominator) ... ok
+test_unlabelled_alternative_rate_blocked (test_boundaries.BoundaryTests.test_unlabelled_alternative_rate_blocked) ... ok
+test_unlabelled_amount_range_blocked (test_boundaries.BoundaryTests.test_unlabelled_amount_range_blocked) ... ok
+test_unregistered_source_cannot_be_substituted (test_boundaries.BoundaryTests.test_unregistered_source_cannot_be_substituted) ... ok
+test_wrong_registered_tool_cannot_replace_requested_one (test_boundaries.BoundaryTests.test_wrong_registered_tool_cannot_replace_requested_one) ... ok
+test_zero_is_explicit_and_executable (test_boundaries.BoundaryTests.test_zero_is_explicit_and_executable) ... ok
+test_all_labels (test_contracts.ContractTests.test_all_labels) ... ok
+test_decimal_rounding (test_contracts.ContractTests.test_decimal_rounding) ... ok
+test_deduction_ratio_must_be_explicit (test_contracts.ContractTests.test_deduction_ratio_must_be_explicit) ... ok
+test_duplicate_json_keys (test_contracts.ContractTests.test_duplicate_json_keys) ... ok
+test_empty_object_rejected (test_contracts.ContractTests.test_empty_object_rejected) ... ok
+test_extra_fields (test_contracts.ContractTests.test_extra_fields) ... ok
+test_hallucinated_null_field_counted (test_contracts.ContractTests.test_hallucinated_null_field_counted) ... ok
+test_invalid_date (test_contracts.ContractTests.test_invalid_date) ... ok
+test_missing_amount_is_null_and_explicit (test_contracts.ContractTests.test_missing_amount_is_null_and_explicit) ... ok
+test_missing_taxpayer_id (test_contracts.ContractTests.test_missing_taxpayer_id) ... ok
+test_missing_tool_parameter (test_contracts.ContractTests.test_missing_tool_parameter) ... ok
+test_no_fabricated_or_ambiguous_parameters (test_contracts.ContractTests.test_no_fabricated_or_ambiguous_parameters) ... ok
+test_parse_failure_stays_in_denominators (test_contracts.ContractTests.test_parse_failure_stays_in_denominators) ... ok
+test_perfect_metrics (test_contracts.ContractTests.test_perfect_metrics) ... ok
+test_string_number_bool_and_nan (test_contracts.ContractTests.test_string_number_bool_and_nan) ... ok
+test_unknown_tool (test_contracts.ContractTests.test_unknown_tool) ... ok
+
+----------------------------------------------------------------------
+Ran 25 tests in 0.033s
+
+OK

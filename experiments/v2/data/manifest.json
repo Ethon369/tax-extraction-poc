@@ -1,0 +1,20 @@
+{
+  "version": "v2",
+  "counts": {
+    "train": 88,
+    "dev": 24,
+    "smoke": 6,
+    "test": 26
+  },
+  "sha256": {
+    "train": "0360f967ae17c755f080f6bba937f29968ab55e00a2e09c7107dcf8675c789c7",
+    "dev": "a84755e3128f938b67e1dc45f91907f91bfce10c56c04cb4394e3c39e5d442c2",
+    "smoke": "0e3db78afedafca469370c705ab20c4dde2bc755df720f08159f6aa83eb082ed",
+    "test": "f1fb8a6674483c10695c8f050acfd317fad30b7f0955fb012648954c36c4648d"
+  },
+  "test_policy": "New holdout frozen before training and prediction; original final test excluded. No tuning after final testing.",
+  "prompt_policy": "Exactly the original SYSTEM_PROMPT; same prompt for before and after.",
+  "human_review": "Assistant-authored synthetic labels validated by code; user review pending.",
+  "added_train_examples": 48,
+  "added_dev_examples": 16
+}

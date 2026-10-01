@@ -2,7 +2,30 @@
 
 本项目将文字单据转换为结构化 JSON，生成两个演示计算工具的调用，或返回明确兜底。效果以 REPORT.md 和 runs 下的实际记录为准。
 
-## 实验摘要与交付内容
+## 版本与阅读入口
+
+| 版本 | 位置 | 内容 |
+|---|---|---|
+| 第一版 | 本目录 | 原始Zero-shot、固定2-shot、微调对比；保留全部数据、适配器和预测 |
+| 第一轮改进V2 | [experiments/v2](experiments/v2/README.md) | 针对缺失信息、兜底与工具边界补充数据，使用新的26条测试同题比较两版 |
+
+请先读[本轮改进报告](experiments/v2/REPORT.md)，再对照[第一版报告](REPORT.md)。两份测试集不同，不直接横比百分比；V2报告比较的是两版适配器在同一新测试集上的表现，记录改善与退化。
+
+V2在同一新测试集上，完整结构通过16/26→20/26、缺失空值及路径共同正确2/8→4/8、工具完整匹配3/4→4/4、兜底6/10→8/10；但字段准确73/88→68/88，非工具请求上的工具调用尝试0→1。它是局部改善，未全面超过第一版，仍有未注册工具和无关请求的失败。第一版的完整代码快照为提交`d373bd8`。
+
+本目录的`src.inference`入口仍运行第一版。使用改进版，请在完成下面环境和基座准备后执行：
+
+```powershell
+$env:PYTHONUTF8='0'
+$env:PYTHONIOENCODING='utf-8'
+$env:HF_HUB_OFFLINE='1'
+$env:TRANSFORMERS_OFFLINE='1'
+Push-Location experiments\v2
+& ..\..\.venv\Scripts\python.exe -m src.inference --adapter runs\formal\adapter --text '计算税额，不含税金额100元，税率未提供。'
+Pop-Location
+```
+
+## 第一版实验摘要与交付内容
 
 - 本机已完成 RTX 3060 Laptop 6GB 上的 QLoRA 训练、三组对照评测和新进程离线适配器重载验证。
 - 模型为 Qwen2.5-1.5B-Instruct；40条训练、8条验证、15条最终测试，另有6条流程验证数据。所有数据均为合成数据。
