@@ -1,0 +1,21 @@
+{
+  "model_id": "Qwen/Qwen2.5-1.5B-Instruct",
+  "seed": 42,
+  "quantization": {"bits": 4, "type": "nf4", "double_quant": true},
+  "training": {
+    "max_length": 512,
+    "batch_size": 1,
+    "gradient_accumulation": 4,
+    "gradient_checkpointing": true,
+    "learning_rate": 0.0001,
+    "epochs": 5,
+    "lora_rank": 8,
+    "lora_alpha": 16,
+    "lora_dropout": 0.05,
+    "target_modules": "all-linear",
+    "max_grad_norm": 1.0
+  },
+  "smoke": {"optimizer_steps": 10},
+  "generation": {"max_input_tokens": 1536, "max_new_tokens": 512, "do_sample": false},
+  "fallback_training": {"max_length": 256, "target_modules": ["q_proj", "v_proj"]}
+}

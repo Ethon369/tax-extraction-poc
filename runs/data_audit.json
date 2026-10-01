@@ -1,0 +1,388 @@
+{
+  "counts": {
+    "train": 40,
+    "dev": 8,
+    "test": 15,
+    "smoke": 6
+  },
+  "normalized_duplicates": 0,
+  "maximum_cross_split_similarity": 0.6923076923076923,
+  "closest_pair": [
+    "train-01",
+    "test-05"
+  ],
+  "lengths": [
+    {
+      "id": "train-01",
+      "total": 347,
+      "assistant": 88
+    },
+    {
+      "id": "train-02",
+      "total": 351,
+      "assistant": 88
+    },
+    {
+      "id": "train-03",
+      "total": 347,
+      "assistant": 89
+    },
+    {
+      "id": "train-04",
+      "total": 403,
+      "assistant": 116
+    },
+    {
+      "id": "train-05",
+      "total": 349,
+      "assistant": 88
+    },
+    {
+      "id": "train-06",
+      "total": 349,
+      "assistant": 88
+    },
+    {
+      "id": "train-07",
+      "total": 359,
+      "assistant": 89
+    },
+    {
+      "id": "train-08",
+      "total": 359,
+      "assistant": 89
+    },
+    {
+      "id": "train-09",
+      "total": 342,
+      "assistant": 88
+    },
+    {
+      "id": "train-10",
+      "total": 403,
+      "assistant": 116
+    },
+    {
+      "id": "train-11",
+      "total": 352,
+      "assistant": 90
+    },
+    {
+      "id": "train-12",
+      "total": 346,
+      "assistant": 90
+    },
+    {
+      "id": "train-13",
+      "total": 356,
+      "assistant": 89
+    },
+    {
+      "id": "train-14",
+      "total": 355,
+      "assistant": 89
+    },
+    {
+      "id": "train-15",
+      "total": 352,
+      "assistant": 90
+    },
+    {
+      "id": "train-16",
+      "total": 358,
+      "assistant": 90
+    },
+    {
+      "id": "train-17",
+      "total": 356,
+      "assistant": 89
+    },
+    {
+      "id": "train-18",
+      "total": 409,
+      "assistant": 116
+    },
+    {
+      "id": "train-19",
+      "total": 357,
+      "assistant": 90
+    },
+    {
+      "id": "train-20",
+      "total": 356,
+      "assistant": 90
+    },
+    {
+      "id": "train-21",
+      "total": 263,
+      "assistant": 41
+    },
+    {
+      "id": "train-22",
+      "total": 263,
+      "assistant": 40
+    },
+    {
+      "id": "train-23",
+      "total": 260,
+      "assistant": 40
+    },
+    {
+      "id": "train-24",
+      "total": 263,
+      "assistant": 40
+    },
+    {
+      "id": "train-25",
+      "total": 263,
+      "assistant": 41
+    },
+    {
+      "id": "train-26",
+      "total": 268,
+      "assistant": 41
+    },
+    {
+      "id": "train-27",
+      "total": 266,
+      "assistant": 42
+    },
+    {
+      "id": "train-28",
+      "total": 264,
+      "assistant": 42
+    },
+    {
+      "id": "train-29",
+      "total": 270,
+      "assistant": 44
+    },
+    {
+      "id": "train-30",
+      "total": 264,
+      "assistant": 40
+    },
+    {
+      "id": "train-31",
+      "total": 319,
+      "assistant": 78
+    },
+    {
+      "id": "train-32",
+      "total": 348,
+      "assistant": 92
+    },
+    {
+      "id": "train-33",
+      "total": 328,
+      "assistant": 81
+    },
+    {
+      "id": "train-34",
+      "total": 345,
+      "assistant": 90
+    },
+    {
+      "id": "train-35",
+      "total": 240,
+      "assistant": 17
+    },
+    {
+      "id": "train-36",
+      "total": 236,
+      "assistant": 17
+    },
+    {
+      "id": "train-37",
+      "total": 225,
+      "assistant": 16
+    },
+    {
+      "id": "train-38",
+      "total": 225,
+      "assistant": 16
+    },
+    {
+      "id": "train-39",
+      "total": 226,
+      "assistant": 16
+    },
+    {
+      "id": "train-40",
+      "total": 230,
+      "assistant": 16
+    },
+    {
+      "id": "dev-01",
+      "total": 364,
+      "assistant": 91
+    },
+    {
+      "id": "dev-02",
+      "total": 354,
+      "assistant": 87
+    },
+    {
+      "id": "dev-03",
+      "total": 384,
+      "assistant": 112
+    },
+    {
+      "id": "dev-04",
+      "total": 322,
+      "assistant": 76
+    },
+    {
+      "id": "dev-05",
+      "total": 266,
+      "assistant": 40
+    },
+    {
+      "id": "dev-06",
+      "total": 269,
+      "assistant": 43
+    },
+    {
+      "id": "dev-07",
+      "total": 225,
+      "assistant": 16
+    },
+    {
+      "id": "dev-08",
+      "total": 241,
+      "assistant": 17
+    },
+    {
+      "id": "test-01",
+      "total": 380,
+      "assistant": 92
+    },
+    {
+      "id": "test-02",
+      "total": 360,
+      "assistant": 88
+    },
+    {
+      "id": "test-03",
+      "total": 391,
+      "assistant": 113
+    },
+    {
+      "id": "test-04",
+      "total": 367,
+      "assistant": 93
+    },
+    {
+      "id": "test-05",
+      "total": 355,
+      "assistant": 88
+    },
+    {
+      "id": "test-06",
+      "total": 368,
+      "assistant": 89
+    },
+    {
+      "id": "test-07",
+      "total": 358,
+      "assistant": 89
+    },
+    {
+      "id": "test-08",
+      "total": 327,
+      "assistant": 78
+    },
+    {
+      "id": "test-09",
+      "total": 360,
+      "assistant": 92
+    },
+    {
+      "id": "test-10",
+      "total": 341,
+      "assistant": 85
+    },
+    {
+      "id": "test-11",
+      "total": 274,
+      "assistant": 42
+    },
+    {
+      "id": "test-12",
+      "total": 274,
+      "assistant": 42
+    },
+    {
+      "id": "test-13",
+      "total": 270,
+      "assistant": 40
+    },
+    {
+      "id": "test-14",
+      "total": 228,
+      "assistant": 16
+    },
+    {
+      "id": "test-15",
+      "total": 234,
+      "assistant": 16
+    },
+    {
+      "id": "smoke-01",
+      "total": 259,
+      "assistant": 39
+    },
+    {
+      "id": "smoke-02",
+      "total": 265,
+      "assistant": 41
+    },
+    {
+      "id": "smoke-03",
+      "total": 224,
+      "assistant": 16
+    },
+    {
+      "id": "smoke-04",
+      "total": 234,
+      "assistant": 17
+    },
+    {
+      "id": "smoke-05",
+      "total": 260,
+      "assistant": 39
+    },
+    {
+      "id": "smoke-06",
+      "total": 260,
+      "assistant": 39
+    }
+  ],
+  "human_review": "Assistant-authored examples; user review pending",
+  "reduced_smoke_lengths": [
+    {
+      "id": "smoke-01",
+      "tokens": 152
+    },
+    {
+      "id": "smoke-02",
+      "tokens": 158
+    },
+    {
+      "id": "smoke-03",
+      "tokens": 117
+    },
+    {
+      "id": "smoke-04",
+      "tokens": 127
+    },
+    {
+      "id": "smoke-05",
+      "tokens": 153
+    },
+    {
+      "id": "smoke-06",
+      "tokens": 153
+    }
+  ]
+}

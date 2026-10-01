@@ -1,0 +1,5 @@
+{
+  "epoch": 3,
+  "dev_loss": 0.0445073306618724,
+  "rule": "minimum mean dev assistant-only loss; final test not consulted"
+}

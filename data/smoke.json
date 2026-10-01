@@ -1,0 +1,122 @@
+[
+  {
+    "id": "smoke-01",
+    "category": "tool",
+    "template_family": "smoke-tax-a",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "试运行税额工具：不含税金额10元，税率1%。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"call_tool\",\"data\":{\"tool_name\":\"calculate_tax_amount\",\"parameters\":{\"amount_without_tax\":10,\"tax_rate\":0.01}},\"reason\":null}"
+      }
+    ]
+  },
+  {
+    "id": "smoke-02",
+    "category": "tool",
+    "template_family": "smoke-ded-a",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "环境检查，请按税额2元、抵扣比例50%生成抵扣调用。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"call_tool\",\"data\":{\"tool_name\":\"calculate_vat_deduction\",\"parameters\":{\"tax_amount\":2,\"deductible_ratio\":0.5}},\"reason\":null}"
+      }
+    ]
+  },
+  {
+    "id": "smoke-03",
+    "category": "fallback",
+    "template_family": "smoke-poem",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "写一首小诗。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"fallback\",\"data\":null,\"reason\":\"unsupported_request\"}"
+      }
+    ]
+  },
+  {
+    "id": "smoke-04",
+    "category": "missing",
+    "template_family": "smoke-no-parameters",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "计算税额，但是未税金额未知、税率也未知。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"fallback\",\"data\":null,\"reason\":\"insufficient_information\"}"
+      }
+    ]
+  },
+  {
+    "id": "smoke-05",
+    "category": "tool",
+    "template_family": "smoke-tax-b",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "小样本测试，税率6%，不含税金额20元，计算税额。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"call_tool\",\"data\":{\"tool_name\":\"calculate_tax_amount\",\"parameters\":{\"amount_without_tax\":20,\"tax_rate\":0.06}},\"reason\":null}"
+      }
+    ]
+  },
+  {
+    "id": "smoke-06",
+    "category": "tool",
+    "template_family": "smoke-ded-b",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "只输出JSON:{\"action\":动作,\"data\":数据,\"reason\":原因}。\n抽取动作extract，原因null。数据键invoice_date(YYYY-MM-DD),taxpayer_id(买方税号),buyer_name,items,missing_fields。items元素键name,amount_without_tax,tax_rate,tax_amount。未知值null，不推算；税率13%=0.13；明细保持原顺序。missing_fields列出空字段路径如items.0.tax_rate，空items写items；tax_amount为空不列。\n计算动作call_tool，原因null，数据键tool_name,parameters。仅支持calculate_tax_amount(amount_without_tax,tax_rate)和calculate_vat_deduction(tax_amount,deductible_ratio)。参数必须明确提供，比例用小数。\n计算参数不足时动作fallback，数据null，原因insufficient_information；无关或未注册请求原因unsupported_request。"
+      },
+      {
+        "role": "user",
+        "content": "测试抵扣：税额3元，允许抵扣比例100%。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"action\":\"call_tool\",\"data\":{\"tool_name\":\"calculate_vat_deduction\",\"parameters\":{\"tax_amount\":3,\"deductible_ratio\":1}},\"reason\":null}"
+      }
+    ]
+  }
+]

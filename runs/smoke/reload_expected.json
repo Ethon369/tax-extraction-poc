@@ -1,0 +1,5 @@
+{
+  "row_id": "smoke-01",
+  "source_text": "试运行税额工具：不含税金额10元，税率1%。",
+  "raw_output": "{\"action\":\"call_tool\",\"data\":{\"tool_name\":\"calculate_tax_amount\",\"parameters\":{\"amount_without_tax\":10,\"tax_rate\":0.01}},\"reason\":null}"
+}

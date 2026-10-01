@@ -1,0 +1,202 @@
+[
+  {
+    "id": "train-01",
+    "tokens": 347,
+    "supervised_tokens": 88
+  },
+  {
+    "id": "train-02",
+    "tokens": 351,
+    "supervised_tokens": 88
+  },
+  {
+    "id": "train-03",
+    "tokens": 347,
+    "supervised_tokens": 89
+  },
+  {
+    "id": "train-04",
+    "tokens": 403,
+    "supervised_tokens": 116
+  },
+  {
+    "id": "train-05",
+    "tokens": 349,
+    "supervised_tokens": 88
+  },
+  {
+    "id": "train-06",
+    "tokens": 349,
+    "supervised_tokens": 88
+  },
+  {
+    "id": "train-07",
+    "tokens": 359,
+    "supervised_tokens": 89
+  },
+  {
+    "id": "train-08",
+    "tokens": 359,
+    "supervised_tokens": 89
+  },
+  {
+    "id": "train-09",
+    "tokens": 342,
+    "supervised_tokens": 88
+  },
+  {
+    "id": "train-10",
+    "tokens": 403,
+    "supervised_tokens": 116
+  },
+  {
+    "id": "train-11",
+    "tokens": 352,
+    "supervised_tokens": 90
+  },
+  {
+    "id": "train-12",
+    "tokens": 346,
+    "supervised_tokens": 90
+  },
+  {
+    "id": "train-13",
+    "tokens": 356,
+    "supervised_tokens": 89
+  },
+  {
+    "id": "train-14",
+    "tokens": 355,
+    "supervised_tokens": 89
+  },
+  {
+    "id": "train-15",
+    "tokens": 352,
+    "supervised_tokens": 90
+  },
+  {
+    "id": "train-16",
+    "tokens": 358,
+    "supervised_tokens": 90
+  },
+  {
+    "id": "train-17",
+    "tokens": 356,
+    "supervised_tokens": 89
+  },
+  {
+    "id": "train-18",
+    "tokens": 409,
+    "supervised_tokens": 116
+  },
+  {
+    "id": "train-19",
+    "tokens": 357,
+    "supervised_tokens": 90
+  },
+  {
+    "id": "train-20",
+    "tokens": 356,
+    "supervised_tokens": 90
+  },
+  {
+    "id": "train-21",
+    "tokens": 263,
+    "supervised_tokens": 41
+  },
+  {
+    "id": "train-22",
+    "tokens": 263,
+    "supervised_tokens": 40
+  },
+  {
+    "id": "train-23",
+    "tokens": 260,
+    "supervised_tokens": 40
+  },
+  {
+    "id": "train-24",
+    "tokens": 263,
+    "supervised_tokens": 40
+  },
+  {
+    "id": "train-25",
+    "tokens": 263,
+    "supervised_tokens": 41
+  },
+  {
+    "id": "train-26",
+    "tokens": 268,
+    "supervised_tokens": 41
+  },
+  {
+    "id": "train-27",
+    "tokens": 266,
+    "supervised_tokens": 42
+  },
+  {
+    "id": "train-28",
+    "tokens": 264,
+    "supervised_tokens": 42
+  },
+  {
+    "id": "train-29",
+    "tokens": 270,
+    "supervised_tokens": 44
+  },
+  {
+    "id": "train-30",
+    "tokens": 264,
+    "supervised_tokens": 40
+  },
+  {
+    "id": "train-31",
+    "tokens": 319,
+    "supervised_tokens": 78
+  },
+  {
+    "id": "train-32",
+    "tokens": 348,
+    "supervised_tokens": 92
+  },
+  {
+    "id": "train-33",
+    "tokens": 328,
+    "supervised_tokens": 81
+  },
+  {
+    "id": "train-34",
+    "tokens": 345,
+    "supervised_tokens": 90
+  },
+  {
+    "id": "train-35",
+    "tokens": 240,
+    "supervised_tokens": 17
+  },
+  {
+    "id": "train-36",
+    "tokens": 236,
+    "supervised_tokens": 17
+  },
+  {
+    "id": "train-37",
+    "tokens": 225,
+    "supervised_tokens": 16
+  },
+  {
+    "id": "train-38",
+    "tokens": 225,
+    "supervised_tokens": 16
+  },
+  {
+    "id": "train-39",
+    "tokens": 226,
+    "supervised_tokens": 16
+  },
+  {
+    "id": "train-40",
+    "tokens": 230,
+    "supervised_tokens": 16
+  }
+]

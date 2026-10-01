@@ -1,0 +1,159 @@
+{
+  "samples": 8,
+  "json_parse": {
+    "correct": 8,
+    "total": 8,
+    "rate": 1.0
+  },
+  "schema_valid": {
+    "correct": 5,
+    "total": 8,
+    "rate": 0.625
+  },
+  "routing": {
+    "correct": 7,
+    "total": 8,
+    "rate": 0.875
+  },
+  "field_accuracy": {
+    "correct": 29,
+    "total": 32,
+    "rate": 0.90625
+  },
+  "non_null_field_micro_f1": {
+    "tp": 24,
+    "fp": 3,
+    "fn": 3,
+    "f1": 0.8888888888888888
+  },
+  "key_fields": {
+    "taxpayer_id": {
+      "correct": 4,
+      "total": 4
+    },
+    "amount_without_tax": {
+      "correct": 5,
+      "total": 5
+    },
+    "tax_rate": {
+      "correct": 5,
+      "total": 5
+    }
+  },
+  "tool_exact": {
+    "correct": 2,
+    "total": 2,
+    "rate": 1.0
+  },
+  "fallback_exact": {
+    "correct": 1,
+    "total": 2,
+    "rate": 0.5
+  },
+  "missing_fields_f1": {
+    "tp": 0,
+    "fp": 2,
+    "fn": 1,
+    "f1": 0.0
+  },
+  "invented_values_on_null_fields": 0,
+  "tool_attempts_on_non_tool_requests": 1,
+  "latency_median_seconds": 6.603531750000002,
+  "hit_generation_limit": 0,
+  "details": [
+    {
+      "id": "dev-01",
+      "json_ok": true,
+      "schema_ok": true,
+      "route_ok": true,
+      "exact_response": false,
+      "parse_error": null
+    },
+    {
+      "id": "dev-02",
+      "json_ok": true,
+      "schema_ok": false,
+      "route_ok": true,
+      "exact_response": false,
+      "parse_error": null
+    },
+    {
+      "id": "dev-03",
+      "json_ok": true,
+      "schema_ok": true,
+      "route_ok": true,
+      "exact_response": true,
+      "parse_error": null
+    },
+    {
+      "id": "dev-04",
+      "json_ok": true,
+      "schema_ok": false,
+      "route_ok": true,
+      "exact_response": false,
+      "parse_error": null
+    },
+    {
+      "id": "dev-05",
+      "json_ok": true,
+      "schema_ok": true,
+      "route_ok": true,
+      "exact_response": true,
+      "parse_error": null
+    },
+    {
+      "id": "dev-06",
+      "json_ok": true,
+      "schema_ok": true,
+      "route_ok": true,
+      "exact_response": true,
+      "parse_error": null
+    },
+    {
+      "id": "dev-07",
+      "json_ok": true,
+      "schema_ok": true,
+      "route_ok": true,
+      "exact_response": true,
+      "parse_error": null
+    },
+    {
+      "id": "dev-08",
+      "json_ok": true,
+      "schema_ok": false,
+      "route_ok": false,
+      "exact_response": false,
+      "parse_error": null
+    }
+  ],
+  "mode": "finetuned",
+  "split": "dev",
+  "peak_allocated_mib": 1191.3525390625,
+  "peak_reserved_mib": 1576.0,
+  "environment": {
+    "python": "3.11.16",
+    "packages": {
+      "torch": "2.8.0+cu126",
+      "transformers": "4.57.1",
+      "peft": "0.17.1",
+      "accelerate": "1.10.1",
+      "bitsandbytes": "0.48.1",
+      "pydantic": "2.12.3"
+    },
+    "gpu": "NVIDIA GeForce RTX 3060 Laptop GPU",
+    "total_vram_mib": 6143.5,
+    "cuda_runtime": "12.6"
+  },
+  "provenance": {
+    "model_manifest_sha256": "d08f083fb9553e279856a6a8bb1003047db7e84ca30d5caa15b4341ce2d5db33",
+    "config_sha256": "d52f4a9138ff1ec5a1b7d6fa07bb87e49b311f86d6ae28a5e315af70e82a8a81",
+    "data_sha256": {
+      "train": "251cf8d0713065646aa4d6f64c24ca7099dae0720b19dbcc526c6deb1c05cb6c",
+      "dev": "d2725d518e1a6c83cd8a3b396ad65805b877e3a1c97bde8e89f99e045070fde5",
+      "test": "add5e4823bcff13aad755d63fe670b3fac2d802c12124f99a3e2078020c7e664",
+      "smoke": "5a4c460cd405eb5c4dd13d5e2f482a2a3bb5f7ec19425fd072fb658f8856d301"
+    }
+  },
+  "runtime_executed": 2,
+  "runtime_blocked": 3
+}

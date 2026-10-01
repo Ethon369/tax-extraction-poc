@@ -1,0 +1,11 @@
+{
+  "raw_output": "{\"action\":\"extract\",\"data\":{\"invoice_date\":\"2026-09-01\",\"taxpayer_id\":\"TEST00000000000101\",\"buyer_name\":\"甲研究室\",\"items\":[{\"name\":\"电池\",\"amount_without_tax\":420,\"tax_rate\":0.13,\"tax_amount\":54.6}],\"missing_fields\":[]},\"reason\":null}",
+  "latency_seconds": 8.646096200000102,
+  "input_tokens": 273,
+  "output_tokens": 89,
+  "hit_token_limit": false,
+  "runtime_guard": {
+    "status": "not_requested"
+  },
+  "reload_matches": true
+}

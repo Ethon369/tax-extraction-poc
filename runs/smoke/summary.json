@@ -1,0 +1,50 @@
+{
+  "profile": "smoke",
+  "settings": {
+    "max_length": 512,
+    "batch_size": 1,
+    "gradient_accumulation": 4,
+    "gradient_checkpointing": true,
+    "learning_rate": 0.0001,
+    "epochs": 5,
+    "lora_rank": 8,
+    "lora_alpha": 16,
+    "lora_dropout": 0.05,
+    "target_modules": "all-linear",
+    "max_grad_norm": 1.0
+  },
+  "dtype": "torch.bfloat16",
+  "optimizer_steps": 10,
+  "epochs_started": 5,
+  "training_seconds": 22.774684300000217,
+  "peak_allocated_mib": 2655.9482421875,
+  "peak_reserved_mib": 3036.0,
+  "trainable_parameters": 9232384,
+  "maximum_parameter_update": 0.0009943771874532104,
+  "all_losses_finite": true,
+  "dev_losses": [],
+  "environment": {
+    "python": "3.11.16",
+    "packages": {
+      "torch": "2.8.0+cu126",
+      "transformers": "4.57.1",
+      "peft": "0.17.1",
+      "accelerate": "1.10.1",
+      "bitsandbytes": "0.48.1",
+      "pydantic": "2.12.3"
+    },
+    "gpu": "NVIDIA GeForce RTX 3060 Laptop GPU",
+    "total_vram_mib": 6143.5,
+    "cuda_runtime": "12.6"
+  },
+  "provenance": {
+    "model_manifest_sha256": "d08f083fb9553e279856a6a8bb1003047db7e84ca30d5caa15b4341ce2d5db33",
+    "config_sha256": "d52f4a9138ff1ec5a1b7d6fa07bb87e49b311f86d6ae28a5e315af70e82a8a81",
+    "data_sha256": {
+      "train": "251cf8d0713065646aa4d6f64c24ca7099dae0720b19dbcc526c6deb1c05cb6c",
+      "dev": "d2725d518e1a6c83cd8a3b396ad65805b877e3a1c97bde8e89f99e045070fde5",
+      "test": "add5e4823bcff13aad755d63fe670b3fac2d802c12124f99a3e2078020c7e664",
+      "smoke": "5a4c460cd405eb5c4dd13d5e2f482a2a3bb5f7ec19425fd072fb658f8856d301"
+    }
+  }
+}

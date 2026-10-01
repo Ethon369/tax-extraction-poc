@@ -1,0 +1,13 @@
+{
+  "raw_output": "{\"action\":\"call_tool\",\"data\":{\"tool_name\":\"calculate_tax_amount\",\"parameters\":{\"amount_without_tax\":10,\"tax_rate\":0.01}},\"reason\":null}",
+  "latency_seconds": 4.165414499999997,
+  "input_tokens": 220,
+  "output_tokens": 38,
+  "hit_token_limit": false,
+  "runtime_guard": {
+    "status": "executed",
+    "tool_name": "calculate_tax_amount",
+    "result_yuan": "0.10"
+  },
+  "reload_matches": true
+}

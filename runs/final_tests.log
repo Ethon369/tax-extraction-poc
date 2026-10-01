@@ -1,0 +1,21 @@
+test_all_labels (test_contracts.ContractTests.test_all_labels) ... ok
+test_decimal_rounding (test_contracts.ContractTests.test_decimal_rounding) ... ok
+test_deduction_ratio_must_be_explicit (test_contracts.ContractTests.test_deduction_ratio_must_be_explicit) ... ok
+test_duplicate_json_keys (test_contracts.ContractTests.test_duplicate_json_keys) ... ok
+test_empty_object_rejected (test_contracts.ContractTests.test_empty_object_rejected) ... ok
+test_extra_fields (test_contracts.ContractTests.test_extra_fields) ... ok
+test_hallucinated_null_field_counted (test_contracts.ContractTests.test_hallucinated_null_field_counted) ... ok
+test_invalid_date (test_contracts.ContractTests.test_invalid_date) ... ok
+test_missing_amount_is_null_and_explicit (test_contracts.ContractTests.test_missing_amount_is_null_and_explicit) ... ok
+test_missing_taxpayer_id (test_contracts.ContractTests.test_missing_taxpayer_id) ... ok
+test_missing_tool_parameter (test_contracts.ContractTests.test_missing_tool_parameter) ... ok
+test_no_fabricated_or_ambiguous_parameters (test_contracts.ContractTests.test_no_fabricated_or_ambiguous_parameters) ... ok
+test_parse_failure_stays_in_denominators (test_contracts.ContractTests.test_parse_failure_stays_in_denominators) ... ok
+test_perfect_metrics (test_contracts.ContractTests.test_perfect_metrics) ... ok
+test_string_number_bool_and_nan (test_contracts.ContractTests.test_string_number_bool_and_nan) ... ok
+test_unknown_tool (test_contracts.ContractTests.test_unknown_tool) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.013s
+
+OK

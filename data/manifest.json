@@ -1,0 +1,16 @@
+{
+  "description": "Fictional, assistant-authored examples; programmatically validated. User review pending.",
+  "counts": {
+    "train": 40,
+    "dev": 8,
+    "test": 15,
+    "smoke": 6
+  },
+  "sha256": {
+    "train": "251cf8d0713065646aa4d6f64c24ca7099dae0720b19dbcc526c6deb1c05cb6c",
+    "dev": "d2725d518e1a6c83cd8a3b396ad65805b877e3a1c97bde8e89f99e045070fde5",
+    "test": "add5e4823bcff13aad755d63fe670b3fac2d802c12124f99a3e2078020c7e664",
+    "smoke": "5a4c460cd405eb5c4dd13d5e2f482a2a3bb5f7ec19425fd072fb658f8856d301"
+  },
+  "test_policy": "Frozen before model experiments; no final-test-driven tuning."
+}

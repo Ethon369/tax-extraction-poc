@@ -1,0 +1,40 @@
+# Local Python environments and download caches
+.venv/
+.python/
+.bootstrap/
+.cache/
+
+# Generated Python files
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Local credentials and editor files
+.env
+.env.*
+*.pem
+*.key
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
+
+# Base model: retain only provenance and license
+models/*
+!models/Qwen2.5-1.5B-Instruct/
+models/Qwen2.5-1.5B-Instruct/*
+!models/Qwen2.5-1.5B-Instruct/download_manifest.json
+!models/Qwen2.5-1.5B-Instruct/LICENSE
+
+# Weight files: retain the two delivered LoRA adapters
+*.safetensors
+*.bin
+*.pt
+*.pth
+!runs/formal/adapter/adapter_model.safetensors
+!runs/smoke/adapter/adapter_model.safetensors
+
+# Local delivery archives
+outputs/
+*.zip
+*.part

@@ -1,0 +1,279 @@
+{'counts': {'train': 40, 'dev': 8, 'test': 15, 'smoke': 6}, 'normalized_duplicates': 0, 'maximum_cross_split_similarity': 0.6923076923076923, 'closest_pair': ['train-01', 'test-05'], 'lengths': [{'id': 'train-01', 'total': 347, 'assistant': 88}, {'id': 'train-02', 'total': 351, 'assistant': 88}, {'id': 'train-03', 'total': 347, 'assistant': 89}, {'id': 'train-04', 'total': 403, 'assistant': 116}, {'id': 'train-05', 'total': 349, 'assistant': 88}, {'id': 'train-06', 'total': 349, 'assistant': 88}, {'id': 'train-07', 'total': 359, 'assistant': 89}, {'id': 'train-08', 'total': 359, 'assistant': 89}, {'id': 'train-09', 'total': 342, 'assistant': 88}, {'id': 'train-10', 'total': 403, 'assistant': 116}, {'id': 'train-11', 'total': 352, 'assistant': 90}, {'id': 'train-12', 'total': 346, 'assistant': 90}, {'id': 'train-13', 'total': 356, 'assistant': 89}, {'id': 'train-14', 'total': 355, 'assistant': 89}, {'id': 'train-15', 'total': 352, 'assistant': 90}, {'id': 'train-16', 'total': 358, 'assistant': 90}, {'id': 'train-17', 'total': 356, 'assistant': 89}, {'id': 'train-18', 'total': 409, 'assistant': 116}, {'id': 'train-19', 'total': 357, 'assistant': 90}, {'id': 'train-20', 'total': 356, 'assistant': 90}, {'id': 'train-21', 'total': 263, 'assistant': 41}, {'id': 'train-22', 'total': 263, 'assistant': 40}, {'id': 'train-23', 'total': 260, 'assistant': 40}, {'id': 'train-24', 'total': 263, 'assistant': 40}, {'id': 'train-25', 'total': 263, 'assistant': 41}, {'id': 'train-26', 'total': 268, 'assistant': 41}, {'id': 'train-27', 'total': 266, 'assistant': 42}, {'id': 'train-28', 'total': 264, 'assistant': 42}, {'id': 'train-29', 'total': 270, 'assistant': 44}, {'id': 'train-30', 'total': 264, 'assistant': 40}, {'id': 'train-31', 'total': 319, 'assistant': 78}, {'id': 'train-32', 'total': 348, 'assistant': 92}, {'id': 'train-33', 'total': 328, 'assistant': 81}, {'id': 'train-34', 'total': 345, 'assistant': 90}, {'id': 'train-35', 'total': 240, 'assistant': 17}, {'id': 'train-36', 'total': 236, 'assistant': 17}, {'id': 'train-37', 'total': 225, 'assistant': 16}, {'id': 'train-38', 'total': 225, 'assistant': 16}, {'id': 'train-39', 'total': 226, 'assistant': 16}, {'id': 'train-40', 'total': 230, 'assistant': 16}, {'id': 'dev-01', 'total': 364, 'assistant': 91}, {'id': 'dev-02', 'total': 354, 'assistant': 87}, {'id': 'dev-03', 'total': 384, 'assistant': 112}, {'id': 'dev-04', 'total': 322, 'assistant': 76}, {'id': 'dev-05', 'total': 266, 'assistant': 40}, {'id': 'dev-06', 'total': 269, 'assistant': 43}, {'id': 'dev-07', 'total': 225, 'assistant': 16}, {'id': 'dev-08', 'total': 241, 'assistant': 17}, {'id': 'test-01', 'total': 380, 'assistant': 92}, {'id': 'test-02', 'total': 360, 'assistant': 88}, {'id': 'test-03', 'total': 391, 'assistant': 113}, {'id': 'test-04', 'total': 367, 'assistant': 93}, {'id': 'test-05', 'total': 355, 'assistant': 88}, {'id': 'test-06', 'total': 368, 'assistant': 89}, {'id': 'test-07', 'total': 358, 'assistant': 89}, {'id': 'test-08', 'total': 327, 'assistant': 78}, {'id': 'test-09', 'total': 360, 'assistant': 92}, {'id': 'test-10', 'total': 341, 'assistant': 85}, {'id': 'test-11', 'total': 274, 'assistant': 42}, {'id': 'test-12', 'total': 274, 'assistant': 42}, {'id': 'test-13', 'total': 270, 'assistant': 40}, {'id': 'test-14', 'total': 228, 'assistant': 16}, {'id': 'test-15', 'total': 234, 'assistant': 16}, {'id': 'smoke-01', 'total': 259, 'assistant': 39}, {'id': 'smoke-02', 'total': 265, 'assistant': 41}, {'id': 'smoke-03', 'total': 224, 'assistant': 16}, {'id': 'smoke-04', 'total': 234, 'assistant': 17}, {'id': 'smoke-05', 'total': 260, 'assistant': 39}, {'id': 'smoke-06', 'total': 260, 'assistant': 39}], 'human_review': 'Assistant-authored examples; user review pending'}
+test_all_labels (test_contracts.ContractTests.test_all_labels) ... ok
+test_decimal_rounding (test_contracts.ContractTests.test_decimal_rounding) ... ok
+test_deduction_ratio_must_be_explicit (test_contracts.ContractTests.test_deduction_ratio_must_be_explicit) ... ok
+test_duplicate_json_keys (test_contracts.ContractTests.test_duplicate_json_keys) ... ok
+test_empty_object_rejected (test_contracts.ContractTests.test_empty_object_rejected) ... ok
+test_extra_fields (test_contracts.ContractTests.test_extra_fields) ... ok
+test_hallucinated_null_field_counted (test_contracts.ContractTests.test_hallucinated_null_field_counted) ... ok
+test_invalid_date (test_contracts.ContractTests.test_invalid_date) ... ok
+test_missing_amount_is_null_and_explicit (test_contracts.ContractTests.test_missing_amount_is_null_and_explicit) ... ok
+test_missing_taxpayer_id (test_contracts.ContractTests.test_missing_taxpayer_id) ... ok
+test_missing_tool_parameter (test_contracts.ContractTests.test_missing_tool_parameter) ... ok
+test_no_fabricated_or_ambiguous_parameters (test_contracts.ContractTests.test_no_fabricated_or_ambiguous_parameters) ... ok
+test_parse_failure_stays_in_denominators (test_contracts.ContractTests.test_parse_failure_stays_in_denominators) ... ok
+test_perfect_metrics (test_contracts.ContractTests.test_perfect_metrics) ... ok
+test_string_number_bool_and_nan (test_contracts.ContractTests.test_string_number_bool_and_nan) ... ok
+test_unknown_tool (test_contracts.ContractTests.test_unknown_tool) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.014s
+
+OK
+`torch_dtype` is deprecated! Use `dtype` instead!
+EVAL dev zero dev-01 7.516803600000003 ```json
+{
+  "action": "extract",
+  "data": {
+    "invoice_date": "2026-09-01",
+    "taxpayer_id": "T
+EVAL dev zero dev-02 11.866629699999976 ```json
+{
+  "action": "extract",
+  "data": {
+    "invoice_date": "2026-09-02",
+    "taxpayer_id": "T
+EVAL dev zero dev-03 11.253438399999823 ```json
+{
+  "action": "extract",
+  "data": {
+    "invoice_date": "2026-09-03",
+    "taxpayer_id": "T
+EVAL dev zero dev-04 6.889715300000034 ```json
+{
+  "action": "extract",
+  "data": {
+    "invoice_date": "2026-09-04",
+    "taxpayer_id": nu
+EVAL dev zero dev-05 3.806094099999882 ```json
+{
+  "action": "call_tool",
+  "data": {
+    "tool_name": "calculate_tax_amount",
+    "paramet
+EVAL dev zero dev-06 4.0993782999998984 ```json
+{
+  "action": "call_tool",
+  "data": {
+    "tool_name": "calculate_tax_amount",
+    "paramet
+EVAL dev zero dev-07 2.201084599999831 ```json
+{
+  "action": "call_tool",
+  "data": {
+    "tool_name": "recommend_travel_city"
+  },
+  "reas
+EVAL dev zero dev-08 2.388992299999927 ```json
+{
+  "action": "call_tool",
+  "data": {
+    "tool_name": "calculate_tax_amount"
+  },
+  "reaso
+EVALUATION_COMPLETE {'samples': 8, 'json_parse': {'correct': 0, 'total': 8, 'rate': 0.0}, 'schema_valid': {'correct': 0, 'total': 8, 'rate': 0.0}, 'routing': {'correct': 0, 'total': 8, 'rate': 0.0}, 'field_accuracy': {'correct': 0, 'total': 32, 'rate': 0.0}, 'non_null_field_micro_f1': {'tp': 0, 'fp': 0, 'fn': 27, 'f1': 0.0}, 'key_fields': {'taxpayer_id': {'correct': 0, 'total': 4}, 'amount_without_tax': {'correct': 0, 'total': 5}, 'tax_rate': {'correct': 0, 'total': 5}}, 'tool_exact': {'correct': 0, 'total': 2, 'rate': 0.0}, 'fallback_exact': {'correct': 0, 'total': 2, 'rate': 0.0}, 'missing_fields_f1': {'tp': 0, 'fp': 0, 'fn': 1, 'f1': 0.0}, 'invented_values_on_null_fields': 0, 'tool_attempts_on_non_tool_requests': 0, 'latency_median_seconds': 5.494546799999966, 'hit_generation_limit': 0, 'details': [{'id': 'dev-01', 'json_ok': False, 'schema_ok': False, 'route_ok': False, 'exact_response': False, 'parse_error': 'Expecting value: line 1 column 1 (char 0)'}, {'id': 'dev-02', 'json_ok': False, 'schema_ok': False, 'route_ok': False, 'exact_response': False, 'parse_error': 'Expecting value: line 1 column 1 (char 0)'}, {'id': 'dev-03', 'json_ok': False, 'schema_ok': False, 'route_ok': False, 'exact_response': False, 'parse_error': 'Expecting value: line 1 column 1 (char 0)'}, {'id': 'dev-04', 'json_ok': False, 'schema_ok': False, 'route_ok': False, 'exact_response': False, 'parse_error': 'Expecting value: line 1 column 1 (char 0)'}, {'id': 'dev-05', 'json_ok': False, 'schema_ok': False, 'route_ok': False, 'exact_response': False, 'parse_error': 'Expecting value: line 1 column 1 (char 0)'}, {'id': 'dev-06', 'json_ok': False, 'schema_ok': False, 'route_ok': False, 'exact_response': False, 'parse_error': 'Expecting value: line 1 column 1 (char 0)'}, {'id': 'dev-07', 'json_ok': False, 'schema_ok': False, 'route_ok': False, 'exact_response': False, 'parse_error': 'Expecting value: line 1 column 1 (char 0)'}, {'id': 'dev-08', 'json_ok': False, 'schema_ok': False, 'route_ok': False, 'exact_response': False, 'parse_error': 'Expecting value: line 1 column 1 (char 0)'}], 'mode': 'zero', 'split': 'dev', 'peak_allocated_mib': 1156.1337890625, 'peak_reserved_mib': 1526.0, 'environment': {'python': '3.11.16', 'packages': {'torch': '2.8.0+cu126', 'transformers': '4.57.1', 'peft': '0.17.1', 'accelerate': '1.10.1', 'bitsandbytes': '0.48.1', 'pydantic': '2.12.3'}, 'gpu': 'NVIDIA GeForce RTX 3060 Laptop GPU', 'total_vram_mib': 6143.5, 'cuda_runtime': '12.6'}, 'provenance': {'model_manifest_sha256': 'd08f083fb9553e279856a6a8bb1003047db7e84ca30d5caa15b4341ce2d5db33', 'config_sha256': 'd52f4a9138ff1ec5a1b7d6fa07bb87e49b311f86d6ae28a5e315af70e82a8a81', 'data_sha256': {'train': '251cf8d0713065646aa4d6f64c24ca7099dae0720b19dbcc526c6deb1c05cb6c', 'dev': 'd2725d518e1a6c83cd8a3b396ad65805b877e3a1c97bde8e89f99e045070fde5', 'test': 'add5e4823bcff13aad755d63fe670b3fac2d802c12124f99a3e2078020c7e664', 'smoke': '5a4c460cd405eb5c4dd13d5e2f482a2a3bb5f7ec19425fd072fb658f8856d301'}}, 'runtime_executed': 0, 'runtime_blocked': 8}
+`torch_dtype` is deprecated! Use `dtype` instead!
+EVAL dev few dev-01 2.5257475999999315 {"action":"call_tool","data":{"tool_name":"calculate_vat_deduction","parameters":{"tax_amount":54.6,
+EVAL dev few dev-02 4.648101600000018 {"action":"extract","data":{"invoice_date":"2026-09-02","taxpayer_id":"TEST00000000000102","buyer_na
+EVAL dev few dev-03 5.731236200000012 {"action":"extract","data":{"invoice_date":"2026/09/03","taxpayer_id":"TEST00000000000103","buyer_na
+EVAL dev few dev-04 3.721867500000144 {"action":"extract","data":{"invoice_date":"2026-09-04","taxpayer_id":null,"buyer_name":"模拟丁社","item
+EVAL dev few dev-05 2.137952099999893 {"action":"call_tool","data":{"tool_name":"calculate_tax_amount","parameters":{"amount_without_tax":
+EVAL dev few dev-06 2.4265611000000717 {"action":"call_tool","data":{"tool_name":"calculate_vat_deduction","parameters":{"tax_amount":40,"d
+EVAL dev few dev-07 1.134808000000021 {"action":"extract","data":{"item":"城市","value":"旅行"},"reason":null}
+EVAL dev few dev-08 2.0157854999999927 {"action":"call_tool","data":{"tool_name":"calculate_tax_amount","parameters":{"amount_without_tax":
+EVALUATION_COMPLETE {'samples': 8, 'json_parse': {'correct': 8, 'total': 8, 'rate': 1.0}, 'schema_valid': {'correct': 3, 'total': 8, 'rate': 0.375}, 'routing': {'correct': 5, 'total': 8, 'rate': 0.625}, 'field_accuracy': {'correct': 22, 'total': 32, 'rate': 0.6875}, 'non_null_field_micro_f1': {'tp': 17, 'fp': 3, 'fn': 10, 'f1': 0.723404255319149}, 'key_fields': {'taxpayer_id': {'correct': 3, 'total': 4}, 'amount_without_tax': {'correct': 4, 'total': 5}, 'tax_rate': {'correct': 4, 'total': 5}}, 'tool_exact': {'correct': 2, 'total': 2, 'rate': 1.0}, 'fallback_exact': {'correct': 0, 'total': 2, 'rate': 0.0}, 'missing_fields_f1': {'tp': 0, 'fp': 0, 'fn': 1, 'f1': 0.0}, 'invented_values_on_null_fields': 0, 'tool_attempts_on_non_tool_requests': 2, 'latency_median_seconds': 2.4761543500000016, 'hit_generation_limit': 0, 'details': [{'id': 'dev-01', 'json_ok': True, 'schema_ok': True, 'route_ok': False, 'exact_response': False, 'parse_error': None}, {'id': 'dev-02', 'json_ok': True, 'schema_ok': False, 'route_ok': True, 'exact_response': False, 'parse_error': None}, {'id': 'dev-03', 'json_ok': True, 'schema_ok': False, 'route_ok': True, 'exact_response': False, 'parse_error': None}, {'id': 'dev-04', 'json_ok': True, 'schema_ok': False, 'route_ok': True, 'exact_response': False, 'parse_error': None}, {'id': 'dev-05', 'json_ok': True, 'schema_ok': True, 'route_ok': True, 'exact_response': True, 'parse_error': None}, {'id': 'dev-06', 'json_ok': True, 'schema_ok': True, 'route_ok': True, 'exact_response': True, 'parse_error': None}, {'id': 'dev-07', 'json_ok': True, 'schema_ok': False, 'route_ok': False, 'exact_response': False, 'parse_error': None}, {'id': 'dev-08', 'json_ok': True, 'schema_ok': False, 'route_ok': False, 'exact_response': False, 'parse_error': None}], 'mode': 'few', 'split': 'dev', 'peak_allocated_mib': 1172.83984375, 'peak_reserved_mib': 1532.0, 'environment': {'python': '3.11.16', 'packages': {'torch': '2.8.0+cu126', 'transformers': '4.57.1', 'peft': '0.17.1', 'accelerate': '1.10.1', 'bitsandbytes': '0.48.1', 'pydantic': '2.12.3'}, 'gpu': 'NVIDIA GeForce RTX 3060 Laptop GPU', 'total_vram_mib': 6143.5, 'cuda_runtime': '12.6'}, 'provenance': {'model_manifest_sha256': 'd08f083fb9553e279856a6a8bb1003047db7e84ca30d5caa15b4341ce2d5db33', 'config_sha256': 'd52f4a9138ff1ec5a1b7d6fa07bb87e49b311f86d6ae28a5e315af70e82a8a81', 'data_sha256': {'train': '251cf8d0713065646aa4d6f64c24ca7099dae0720b19dbcc526c6deb1c05cb6c', 'dev': 'd2725d518e1a6c83cd8a3b396ad65805b877e3a1c97bde8e89f99e045070fde5', 'test': 'add5e4823bcff13aad755d63fe670b3fac2d802c12124f99a3e2078020c7e664', 'smoke': '5a4c460cd405eb5c4dd13d5e2f482a2a3bb5f7ec19425fd072fb658f8856d301'}}, 'runtime_executed': 2, 'runtime_blocked': 6}
+`torch_dtype` is deprecated! Use `dtype` instead!
+TOKEN_AUDIT 409 TRAINABLE 9232384
+TRAIN {'step': 1, 'epoch': 1, 'loss': 0.2918316014111042, 'gradient_norm': 2.2920944690704346, 'elapsed_seconds': 2.547988499999974}
+TRAIN {'step': 2, 'epoch': 1, 'loss': 0.1272655464708805, 'gradient_norm': 1.2312901020050049, 'elapsed_seconds': 4.723546700000043}
+TRAIN {'step': 3, 'epoch': 1, 'loss': 0.10358331259340048, 'gradient_norm': 0.7597858905792236, 'elapsed_seconds': 7.017356500000005}
+TRAIN {'step': 4, 'epoch': 1, 'loss': 0.15658994019031525, 'gradient_norm': 2.0583596229553223, 'elapsed_seconds': 9.10082599999987}
+TRAIN {'step': 5, 'epoch': 1, 'loss': 0.0928514190018177, 'gradient_norm': 0.9360253214836121, 'elapsed_seconds': 11.154199199999994}
+TRAIN {'step': 6, 'epoch': 1, 'loss': 0.07994142733514309, 'gradient_norm': 0.7018347382545471, 'elapsed_seconds': 13.135705799999869}
+TRAIN {'step': 7, 'epoch': 1, 'loss': 0.0817860858514905, 'gradient_norm': 1.6919517517089844, 'elapsed_seconds': 15.288869100000056}
+TRAIN {'step': 8, 'epoch': 1, 'loss': 0.04378122999332845, 'gradient_norm': 0.47254854440689087, 'elapsed_seconds': 17.461293599999863}
+TRAIN {'step': 9, 'epoch': 1, 'loss': 0.039338565431535244, 'gradient_norm': 1.8856911659240723, 'elapsed_seconds': 19.715060600000015}
+TRAIN {'step': 10, 'epoch': 1, 'loss': 0.07092173863202333, 'gradient_norm': 0.5212275981903076, 'elapsed_seconds': 21.883955499999956}
+DEV_LOSS 1 0.08108270296361297
+TRAIN {'step': 11, 'epoch': 2, 'loss': 0.06035661604255438, 'gradient_norm': 2.4424242973327637, 'elapsed_seconds': 25.27736149999987}
+TRAIN {'step': 12, 'epoch': 2, 'loss': 0.018290396546944976, 'gradient_norm': 0.8620278239250183, 'elapsed_seconds': 27.418940699999894}
+TRAIN {'step': 13, 'epoch': 2, 'loss': 0.010255851550027728, 'gradient_norm': 0.22044484317302704, 'elapsed_seconds': 29.44874149999987}
+TRAIN {'step': 14, 'epoch': 2, 'loss': 0.04395928361918777, 'gradient_norm': 0.4710848033428192, 'elapsed_seconds': 31.62535899999989}
+TRAIN {'step': 15, 'epoch': 2, 'loss': 0.036742308526299894, 'gradient_norm': 1.6040443181991577, 'elapsed_seconds': 33.66134769999985}
+TRAIN {'step': 16, 'epoch': 2, 'loss': 0.044802846387028694, 'gradient_norm': 1.2298704385757446, 'elapsed_seconds': 35.90771749999999}
+TRAIN {'step': 17, 'epoch': 2, 'loss': 0.08389805490151048, 'gradient_norm': 0.9154291152954102, 'elapsed_seconds': 37.919799399999874}
+TRAIN {'step': 18, 'epoch': 2, 'loss': 0.02085370640270412, 'gradient_norm': 0.4427717626094818, 'elapsed_seconds': 40.09026339999991}
+TRAIN {'step': 19, 'epoch': 2, 'loss': 0.006567780626937747, 'gradient_norm': 0.1695030778646469, 'elapsed_seconds': 42.234801699999934}
+TRAIN {'step': 20, 'epoch': 2, 'loss': 0.0207476953510195, 'gradient_norm': 0.261249840259552, 'elapsed_seconds': 44.51893270000005}
+DEV_LOSS 2 0.06007403740659356
+TRAIN {'step': 21, 'epoch': 3, 'loss': 0.014646577648818493, 'gradient_norm': 0.20701013505458832, 'elapsed_seconds': 48.2321629999999}
+TRAIN {'step': 22, 'epoch': 3, 'loss': 0.009351358050480485, 'gradient_norm': 0.16001388430595398, 'elapsed_seconds': 50.476552800000036}
+TRAIN {'step': 23, 'epoch': 3, 'loss': 0.023114743176847696, 'gradient_norm': 0.20026078820228577, 'elapsed_seconds': 52.698961499999996}
+TRAIN {'step': 24, 'epoch': 3, 'loss': 0.05666958255460486, 'gradient_norm': 0.9986864924430847, 'elapsed_seconds': 54.87064869999995}
+TRAIN {'step': 25, 'epoch': 3, 'loss': 0.0058736688806675375, 'gradient_norm': 0.15594841539859772, 'elapsed_seconds': 57.28072810000003}
+TRAIN {'step': 26, 'epoch': 3, 'loss': 0.007497517333831638, 'gradient_norm': 0.1864081174135208, 'elapsed_seconds': 59.66176419999988}
+TRAIN {'step': 27, 'epoch': 3, 'loss': 0.01098238374106586, 'gradient_norm': 0.20542225241661072, 'elapsed_seconds': 61.82171500000004}
+TRAIN {'step': 28, 'epoch': 3, 'loss': 0.009290480869822204, 'gradient_norm': 0.1261262148618698, 'elapsed_seconds': 63.913746400000036}
+TRAIN {'step': 29, 'epoch': 3, 'loss': 0.005511568975634873, 'gradient_norm': 0.3217419981956482, 'elapsed_seconds': 66.0571832999999}
+TRAIN {'step': 30, 'epoch': 3, 'loss': 0.007492508215364069, 'gradient_norm': 0.39270541071891785, 'elapsed_seconds': 68.53124320000006}
+DEV_LOSS 3 0.0445073306618724
+TRAIN {'step': 31, 'epoch': 4, 'loss': 0.0059722082514781505, 'gradient_norm': 0.10189948976039886, 'elapsed_seconds': 72.25722279999991}
+TRAIN {'step': 32, 'epoch': 4, 'loss': 0.013518924359232187, 'gradient_norm': 0.25035208463668823, 'elapsed_seconds': 74.36667220000004}
+TRAIN {'step': 33, 'epoch': 4, 'loss': 0.008049609721638262, 'gradient_norm': 0.25869569182395935, 'elapsed_seconds': 76.46455930000002}
+TRAIN {'step': 34, 'epoch': 4, 'loss': 0.002054977900115773, 'gradient_norm': 0.05179278925061226, 'elapsed_seconds': 78.59709829999997}
+TRAIN {'step': 35, 'epoch': 4, 'loss': 0.0043265018466627225, 'gradient_norm': 0.09651883691549301, 'elapsed_seconds': 80.73488479999992}
+TRAIN {'step': 36, 'epoch': 4, 'loss': 0.004861454450292513, 'gradient_norm': 0.17252330482006073, 'elapsed_seconds': 83.19974690000004}
+TRAIN {'step': 37, 'epoch': 4, 'loss': 0.000591610609262716, 'gradient_norm': 0.013462637551128864, 'elapsed_seconds': 85.35244869999997}
+TRAIN {'step': 38, 'epoch': 4, 'loss': 0.00969345479097683, 'gradient_norm': 0.4018692672252655, 'elapsed_seconds': 87.43959930000005}
+TRAIN {'step': 39, 'epoch': 4, 'loss': 0.0013871192204533145, 'gradient_norm': 0.04393773153424263, 'elapsed_seconds': 89.57003379999992}
+TRAIN {'step': 40, 'epoch': 4, 'loss': 0.0009560496400808915, 'gradient_norm': 0.0218651220202446, 'elapsed_seconds': 91.68650400000001}
+DEV_LOSS 4 0.051514019887690665
+TRAIN {'step': 41, 'epoch': 5, 'loss': 0.0006550765756401233, 'gradient_norm': 0.013931228779256344, 'elapsed_seconds': 95.05541119999998}
+TRAIN {'step': 42, 'epoch': 5, 'loss': 0.0011445722193457186, 'gradient_norm': 0.04589845612645149, 'elapsed_seconds': 97.08640229999992}
+TRAIN {'step': 43, 'epoch': 5, 'loss': 0.0006578488973900676, 'gradient_norm': 0.025021487846970558, 'elapsed_seconds': 99.21991389999994}
+TRAIN {'step': 44, 'epoch': 5, 'loss': 0.0040561105706728995, 'gradient_norm': 0.15166424214839935, 'elapsed_seconds': 101.2231890999999}
+TRAIN {'step': 45, 'epoch': 5, 'loss': 0.0005229306043474935, 'gradient_norm': 0.01317598670721054, 'elapsed_seconds': 103.45737680000002}
+TRAIN {'step': 46, 'epoch': 5, 'loss': 0.00034578334452817217, 'gradient_norm': 0.008379434235394001, 'elapsed_seconds': 105.54271909999989}
+TRAIN {'step': 47, 'epoch': 5, 'loss': 0.0007274442359630484, 'gradient_norm': 0.026800069957971573, 'elapsed_seconds': 107.73172980000004}
+TRAIN {'step': 48, 'epoch': 5, 'loss': 0.001060229587892536, 'gradient_norm': 0.02717706188559532, 'elapsed_seconds': 109.72473160000004}
+TRAIN {'step': 49, 'epoch': 5, 'loss': 0.0010854397351067746, 'gradient_norm': 0.028738509863615036, 'elapsed_seconds': 111.83544979999988}
+TRAIN {'step': 50, 'epoch': 5, 'loss': 0.0003384857118362561, 'gradient_norm': 0.02097373642027378, 'elapsed_seconds': 114.02506429999994}
+DEV_LOSS 5 0.10296653775731102
+TRAINING_COMPLETE {'profile': 'formal', 'settings': {'max_length': 512, 'batch_size': 1, 'gradient_accumulation': 4, 'gradient_checkpointing': True, 'learning_rate': 0.0001, 'epochs': 5, 'lora_rank': 8, 'lora_alpha': 16, 'lora_dropout': 0.05, 'target_modules': 'all-linear', 'max_grad_norm': 1.0}, 'dtype': 'torch.bfloat16', 'optimizer_steps': 50, 'epochs_started': 5, 'training_seconds': 115.11174349999987, 'peak_allocated_mib': 2932.234375, 'peak_reserved_mib': 4482.0, 'trainable_parameters': 9232384, 'maximum_parameter_update': 0.0037045511417090893, 'all_losses_finite': True, 'dev_losses': [{'epoch': 1, 'loss': 0.08108270296361297}, {'epoch': 2, 'loss': 0.06007403740659356}, {'epoch': 3, 'loss': 0.0445073306618724}, {'epoch': 4, 'loss': 0.051514019887690665}, {'epoch': 5, 'loss': 0.10296653775731102}], 'environment': {'python': '3.11.16', 'packages': {'torch': '2.8.0+cu126', 'transformers': '4.57.1', 'peft': '0.17.1', 'accelerate': '1.10.1', 'bitsandbytes': '0.48.1', 'pydantic': '2.12.3'}, 'gpu': 'NVIDIA GeForce RTX 3060 Laptop GPU', 'total_vram_mib': 6143.5, 'cuda_runtime': '12.6'}, 'provenance': {'model_manifest_sha256': 'd08f083fb9553e279856a6a8bb1003047db7e84ca30d5caa15b4341ce2d5db33', 'config_sha256': 'd52f4a9138ff1ec5a1b7d6fa07bb87e49b311f86d6ae28a5e315af70e82a8a81', 'data_sha256': {'train': '251cf8d0713065646aa4d6f64c24ca7099dae0720b19dbcc526c6deb1c05cb6c', 'dev': 'd2725d518e1a6c83cd8a3b396ad65805b877e3a1c97bde8e89f99e045070fde5', 'test': 'add5e4823bcff13aad755d63fe670b3fac2d802c12124f99a3e2078020c7e664', 'smoke': '5a4c460cd405eb5c4dd13d5e2f482a2a3bb5f7ec19425fd072fb658f8856d301'}}}
+`torch_dtype` is deprecated! Use `dtype` instead!
+EVAL dev finetuned dev-01 9.133609999999862 {"action":"extract","data":{"invoice_date":"2026-09-01","taxpayer_id":"TEST00000000000101","buyer_na
+EVAL dev finetuned dev-02 9.86228989999995 {"action":"extract","data":{"invoice_date":"2026-09-02","taxpayer_id":"TEST00000000000102","buyer_na
+EVAL dev finetuned dev-03 12.191689900000029 {"action":"extract","data":{"invoice_date":"2026-09-03","taxpayer_id":"TEST00000000000103","buyer_na
+EVAL dev finetuned dev-04 8.522772199999963 {"action":"extract","data":{"invoice_date":"2026-09-04","taxpayer_id":null,"buyer_name":"模拟丁社","item
+EVAL dev finetuned dev-05 4.41114309999989 {"action":"call_tool","data":{"tool_name":"calculate_tax_amount","parameters":{"amount_without_tax":
+EVAL dev finetuned dev-06 4.684291300000041 {"action":"call_tool","data":{"tool_name":"calculate_vat_deduction","parameters":{"tax_amount":40,"d
+EVAL dev finetuned dev-07 1.6591106000000764 {"action":"fallback","data":null,"reason":"unsupported_request"}
+EVAL dev finetuned dev-08 3.7282235999998647 {"action":"call_tool","data":{"tool_name":"calculate_tax_amount","parameters":{"amount_without_tax":
+EVALUATION_COMPLETE {'samples': 8, 'json_parse': {'correct': 8, 'total': 8, 'rate': 1.0}, 'schema_valid': {'correct': 5, 'total': 8, 'rate': 0.625}, 'routing': {'correct': 7, 'total': 8, 'rate': 0.875}, 'field_accuracy': {'correct': 29, 'total': 32, 'rate': 0.90625}, 'non_null_field_micro_f1': {'tp': 24, 'fp': 3, 'fn': 3, 'f1': 0.8888888888888888}, 'key_fields': {'taxpayer_id': {'correct': 4, 'total': 4}, 'amount_without_tax': {'correct': 5, 'total': 5}, 'tax_rate': {'correct': 5, 'total': 5}}, 'tool_exact': {'correct': 2, 'total': 2, 'rate': 1.0}, 'fallback_exact': {'correct': 1, 'total': 2, 'rate': 0.5}, 'missing_fields_f1': {'tp': 0, 'fp': 2, 'fn': 1, 'f1': 0.0}, 'invented_values_on_null_fields': 0, 'tool_attempts_on_non_tool_requests': 1, 'latency_median_seconds': 6.603531750000002, 'hit_generation_limit': 0, 'details': [{'id': 'dev-01', 'json_ok': True, 'schema_ok': True, 'route_ok': True, 'exact_response': False, 'parse_error': None}, {'id': 'dev-02', 'json_ok': True, 'schema_ok': False, 'route_ok': True, 'exact_response': False, 'parse_error': None}, {'id': 'dev-03', 'json_ok': True, 'schema_ok': True, 'route_ok': True, 'exact_response': True, 'parse_error': None}, {'id': 'dev-04', 'json_ok': True, 'schema_ok': False, 'route_ok': True, 'exact_response': False, 'parse_error': None}, {'id': 'dev-05', 'json_ok': True, 'schema_ok': True, 'route_ok': True, 'exact_response': True, 'parse_error': None}, {'id': 'dev-06', 'json_ok': True, 'schema_ok': True, 'route_ok': True, 'exact_response': True, 'parse_error': None}, {'id': 'dev-07', 'json_ok': True, 'schema_ok': True, 'route_ok': True, 'exact_response': True, 'parse_error': None}, {'id': 'dev-08', 'json_ok': True, 'schema_ok': False, 'route_ok': False, 'exact_response': False, 'parse_error': None}], 'mode': 'finetuned', 'split': 'dev', 'peak_allocated_mib': 1191.3525390625, 'peak_reserved_mib': 1576.0, 'environment': {'python': '3.11.16', 'packages': {'torch': '2.8.0+cu126', 'transformers': '4.57.1', 'peft': '0.17.1', 'accelerate': '1.10.1', 'bitsandbytes': '0.48.1', 'pydantic': '2.12.3'}, 'gpu': 'NVIDIA GeForce RTX 3060 Laptop GPU', 'total_vram_mib': 6143.5, 'cuda_runtime': '12.6'}, 'provenance': {'model_manifest_sha256': 'd08f083fb9553e279856a6a8bb1003047db7e84ca30d5caa15b4341ce2d5db33', 'config_sha256': 'd52f4a9138ff1ec5a1b7d6fa07bb87e49b311f86d6ae28a5e315af70e82a8a81', 'data_sha256': {'train': '251cf8d0713065646aa4d6f64c24ca7099dae0720b19dbcc526c6deb1c05cb6c', 'dev': 'd2725d518e1a6c83cd8a3b396ad65805b877e3a1c97bde8e89f99e045070fde5', 'test': 'add5e4823bcff13aad755d63fe670b3fac2d802c12124f99a3e2078020c7e664', 'smoke': '5a4c460cd405eb5c4dd13d5e2f482a2a3bb5f7ec19425fd072fb658f8856d301'}}, 'runtime_executed': 2, 'runtime_blocked': 3}
+`torch_dtype` is deprecated! Use `dtype` instead!
+EVAL test zero test-01 7.935909599999832 ```json
+{
+  "action": "extract",
+  "data": {
+    "invoice_date": "2026-09-10",
+    "taxpayer_id": "T
+EVAL test zero test-02 7.709824600000047 ```json
+{
+  "action": "extract",
+  "data": {
+    "invoice_date": "2026-09-11",
+    "taxpayer_id": "T
+EVAL test zero test-03 10.539693499999885 ```json
+{
+  "action": "extract",
+  "data": {
+    "invoice_date": "2026-09-12",
+    "taxpayer_id": "T
+EVAL test zero test-04 8.080076799999915 ```json
+{
+  "action": "extract",
+  "data": {
+    "invoice_date": "2026-09-13",
+    "taxpayer_id": "T
+EVAL test zero test-05 8.10014810000007 ```json
+{
+  "action": "extract",
+  "data": {
+    "invoice_date": "2026-09-14",
+    "taxpayer_id": "T
+EVAL test zero test-06 9.189053699999931 ```json
+{
+  "action": "extract",
+  "data": {
+    "invoice_date": "2026-09-15",
+    "taxpayer_id": "T
+EVAL test zero test-07 8.875903600000129 ```json
+{
+  "action": "extract",
+  "data": {
+    "invoice_date": "2026-09-16",
+    "taxpayer_id": "T
+EVAL test zero test-08 4.021536499999911 ```json
+{
+  "action": "call_tool",
+  "data": {
+    "tool_name": "calculate_tax_amount",
+    "paramet
+EVAL test zero test-09 8.986208900000065 ```json
+{
+  "action": "extract",
+  "data": {
+    "invoice_date": "2026-09-18",
+    "taxpayer_id": "T
+EVAL test zero test-10 7.537947199999962 ```json
+{
+  "action": "extract",
+  "data": {
+    "invoice_date": null,
+    "taxpayer_id": "TEST00000
+EVAL test zero test-11 3.222714799999949 ```json
+{
+  "action": "calculate_tax_amount",
+  "data": {
+    "amount_without_tax": 125.5,
+    "tax_
+EVAL test zero test-12 4.483173100000158 ```json
+{
+  "action": "call_tool",
+  "data": {
+    "tool_name": "calculate_tax_amount",
+    "paramet
+EVAL test zero test-13 2.2194580999998834 ```json
+{
+  "action": "call_tool",
+  "data": {
+    "tool_name": "calculate_tax_amount"
+  },
+  "reaso
+EVAL test zero test-14 4.384352900000067 {"action":"get_weather_forecast","reason":"ask_about_weather","data":{"current_weather":[{"date":"20
+EVAL test zero test-15 5.308197100000143 ```json
+{
+  "action": "calculate_land_appreciation_tax",
+  "data": {
+    "tool_name": "calculate_lan
+EVALUATION_COMPLETE {'samples': 15, 'json_parse': {'correct': 1, 'total': 15, 'rate': 0.06666666666666667}, 'schema_valid': {'correct': 0, 'total': 15, 'rate': 0.0}, 'routing': {'correct': 0, 'total': 15, 'rate': 0.0}, 'field_accuracy': {'correct': 0, 'total': 74, 'rate': 0.0}, 'non_null_field_micro_f1': {'tp': 0, 'fp': 0, 'fn': 61, 'f1': 0.0}, 'key_fields': {'taxpayer_id': {'correct': 0, 'total': 10}, 'amount_without_tax': {'correct': 0, 'total': 11}, 'tax_rate': {'correct': 0, 'total': 11}}, 'tool_exact': {'correct': 0, 'total': 3, 'rate': 0.0}, 'fallback_exact': {'correct': 0, 'total': 2, 'rate': 0.0}, 'missing_fields_f1': {'tp': 0, 'fp': 0, 'fn': 4, 'f1': 0.0}, 'invented_values_on_null_fields': 0, 'tool_attempts_on_non_tool_requests': 0, 'latency_median_seconds': 7.709824600000047, 'hit_generation_limit': 0, 'details': [{'id': 'test-01', 'json_ok': False, 'schema_ok': False, 'route_ok': False, 'exact_response': False, 'parse_error': 'Expecting value: line 1 column 1 (char 0)'}, {'id': 'test-02', 'json_ok': False, 'schema_ok': False, 'route_ok': False, 'exact_response': False, 'parse_error': 'Expecting value: line 1 column 1 (char 0)'}, {'id': 'test-03', 'json_ok': False, 'schema_ok': False, 'route_ok': False, 'exact_response': False, 'parse_error': 'Expecting value: line 1 column 1 (char 0)'}, {'id': 'test-04', 'json_ok': False, 'schema_ok': False, 'route_ok': False, 'exact_response': False, 'parse_error': 'Expecting value: line 1 column 1 (char 0)'}, {'id': 'test-05', 'json_ok': False, 'schema_ok': False, 'route_ok': False, 'exact_response': False, 'parse_error': 'Expecting value: line 1 column 1 (char 0)'}, {'id': 'test-06', 'json_ok': False, 'schema_ok': False, 'route_ok': False, 'exact_response': False, 'parse_error': 'Expecting value: line 1 column 1 (char 0)'}, {'id': 'test-07', 'json_ok': False, 'schema_ok': False, 'route_ok': False, 'exact_response': False, 'parse_error': 'Expecting value: line 1 column 1 (char 0)'}, {'id': 'test-08', 'json_ok': False, 'schema_ok': False, 'route_ok': False, 'exact_response': False, 'parse_error': 'Expecting value: line 1 column 1 (char 0)'}, {'id': 'test-09', 'json_ok': False, 'schema_ok': False, 'route_ok': False, 'exact_response': False, 'parse_error': 'Expecting value: line 1 column 1 (char 0)'}, {'id': 'test-10', 'json_ok': False, 'schema_ok': False, 'route_ok': False, 'exact_response': False, 'parse_error': 'Expecting value: line 1 column 1 (char 0)'}, {'id': 'test-11', 'json_ok': False, 'schema_ok': False, 'route_ok': False, 'exact_response': False, 'parse_error': 'Expecting value: line 1 column 1 (char 0)'}, {'id': 'test-12', 'json_ok': False, 'schema_ok': False, 'route_ok': False, 'exact_response': False, 'parse_error': 'Expecting value: line 1 column 1 (char 0)'}, {'id': 'test-13', 'json_ok': False, 'schema_ok': False, 'route_ok': False, 'exact_response': False, 'parse_error': 'Expecting value: line 1 column 1 (char 0)'}, {'id': 'test-14', 'json_ok': True, 'schema_ok': False, 'route_ok': False, 'exact_response': False, 'parse_error': None}, {'id': 'test-15', 'json_ok': False, 'schema_ok': False, 'route_ok': False, 'exact_response': False, 'parse_error': 'Expecting value: line 1 column 1 (char 0)'}], 'mode': 'zero', 'split': 'test', 'peak_allocated_mib': 1157.2392578125, 'peak_reserved_mib': 1526.0, 'environment': {'python': '3.11.16', 'packages': {'torch': '2.8.0+cu126', 'transformers': '4.57.1', 'peft': '0.17.1', 'accelerate': '1.10.1', 'bitsandbytes': '0.48.1', 'pydantic': '2.12.3'}, 'gpu': 'NVIDIA GeForce RTX 3060 Laptop GPU', 'total_vram_mib': 6143.5, 'cuda_runtime': '12.6'}, 'provenance': {'model_manifest_sha256': 'd08f083fb9553e279856a6a8bb1003047db7e84ca30d5caa15b4341ce2d5db33', 'config_sha256': 'd52f4a9138ff1ec5a1b7d6fa07bb87e49b311f86d6ae28a5e315af70e82a8a81', 'data_sha256': {'train': '251cf8d0713065646aa4d6f64c24ca7099dae0720b19dbcc526c6deb1c05cb6c', 'dev': 'd2725d518e1a6c83cd8a3b396ad65805b877e3a1c97bde8e89f99e045070fde5', 'test': 'add5e4823bcff13aad755d63fe670b3fac2d802c12124f99a3e2078020c7e664', 'smoke': '5a4c460cd405eb5c4dd13d5e2f482a2a3bb5f7ec19425fd072fb658f8856d301'}}, 'runtime_executed': 0, 'runtime_blocked': 15}
+`torch_dtype` is deprecated! Use `dtype` instead!
+EVAL test few test-01 4.920222599999988 {"action":"extract","data":{"invoice_date":"2026-09-10","taxpayer_id":"TEST00000000000201","buyer_na
+EVAL test few test-02 3.3241286999998465 {"action":"extract","data":{"invoice_date":"2026年09月11日","service":"设计","items":[{"name":"未税金额","amo
+EVAL test few test-03 7.3997719000001325 {"action":"extract","data":{"invoice_date":"2026-09-12","taxpayer_id":"TEST00000000000203","buyer_na
+EVAL test few test-04 5.126827100000128 {"action":"extract","data":{"invoice_date":"2026-09-13","taxpayer_id":"TEST00000000000204","buyer_na
+EVAL test few test-05 6.5454935000000205 {"action":"extract","data":{"invoice_date":"2026-09-14","taxpayer_id":"TEST00000000000205","buyer_na
+EVAL test few test-06 4.9627742999998645 {"action":"extract","data":{"invoice_date":"2026-09-15","taxpayer_id":"TEST00000000000206","buyer_na
+EVAL test few test-07 4.881349199999931 {"action":"extract","data":{"invoice_date":"2026-09-16","taxpayer_id":"TEST00000000000207","buyer_na
+EVAL test few test-08 4.211665699999912 {"action":"extract","data":{"invoice_date":"2026-09-17","taxpayer_id":"空白","buyer_name":"模拟远山公司","it
+EVAL test few test-09 4.703467300000057 {"action":"extract","data":{"invoice_date":"2026-09-18","taxpayer_id":"TEST00000000000209","buyer_na
+EVAL test few test-10 4.219119200000023 {"action":"extract","data":{"invoice_date":"无法确认","taxpayer_id":"TEST00000000000210","buyer_name":"模
+EVAL test few test-11 4.128247800000054 ```json
+{
+  "action": "call_tool",
+  "data": {
+    "tool_name": "calculate_tax_amount",
+    "paramet
+EVAL test few test-12 2.475112500000023 {"action":"call_tool","data":{"tool_name":"calculate_vat_deduction","parameters":{"tax_amount":75,"d
+EVAL test few test-13 2.328045199999906 {"action":"call_tool","data":{"tool_name":"calculate_tax_amount","parameters":{"amount_without_tax":
+EVAL test few test-14 1.694398500000034 {"action":"extract","data":{"weather_forecast":"晴朗，温度适宜，风力较小"},"reason":null}
+EVAL test few test-15 2.1005451000000903 {"action":"call_tool","data":{"tool_name":"calculate_land_appreciation_tax","parameters":{}},"reason
+EVALUATION_COMPLETE {'samples': 15, 'json_parse': {'correct': 13, 'total': 15, 'rate': 0.8666666666666667}, 'schema_valid': {'correct': 2, 'total': 15, 'rate': 0.13333333333333333}, 'routing': {'correct': 11, 'total': 15, 'rate': 0.7333333333333333}, 'field_accuracy': {'correct': 57, 'total': 74, 'rate': 0.7702702702702703}, 'non_null_field_micro_f1': {'tp': 51, 'fp': 10, 'fn': 10, 'f1': 0.8360655737704918}, 'key_fields': {'taxpayer_id': {'correct': 7, 'total': 10}, 'amount_without_tax': {'correct': 10, 'total': 11}, 'tax_rate': {'correct': 10, 'total': 11}}, 'tool_exact': {'correct': 2, 'total': 3, 'rate': 0.6666666666666666}, 'fallback_exact': {'correct': 0, 'total': 2, 'rate': 0.0}, 'missing_fields_f1': {'tp': 0, 'fp': 0, 'fn': 4, 'f1': 0.0}, 'invented_values_on_null_fields': 5, 'tool_attempts_on_non_tool_requests': 1, 'latency_median_seconds': 4.219119200000023, 'hit_generation_limit': 0, 'details': [{'id': 'test-01', 'json_ok': True, 'schema_ok': False, 'route_ok': True, 'exact_response': False, 'parse_error': None}, {'id': 'test-02', 'json_ok': True, 'schema_ok': False, 'route_ok': True, 'exact_response': False, 'parse_error': None}, {'id': 'test-03', 'json_ok': True, 'schema_ok': False, 'route_ok': True, 'exact_response': False, 'parse_error': None}, {'id': 'test-04', 'json_ok': True, 'schema_ok': False, 'route_ok': True, 'exact_response': False, 'parse_error': None}, {'id': 'test-05', 'json_ok': False, 'schema_ok': False, 'route_ok': False, 'exact_response': False, 'parse_error': "Expecting ',' delimiter: line 1 column 196 (char 195)"}, {'id': 'test-06', 'json_ok': True, 'schema_ok': False, 'route_ok': True, 'exact_response': False, 'parse_error': None}, {'id': 'test-07', 'json_ok': True, 'schema_ok': False, 'route_ok': True, 'exact_response': False, 'parse_error': None}, {'id': 'test-08', 'json_ok': True, 'schema_ok': False, 'route_ok': True, 'exact_response': False, 'parse_error': None}, {'id': 'test-09', 'json_ok': True, 'schema_ok': False, 'route_ok': True, 'exact_response': False, 'parse_error': None}, {'id': 'test-10', 'json_ok': True, 'schema_ok': False, 'route_ok': True, 'exact_response': False, 'parse_error': None}, {'id': 'test-11', 'json_ok': False, 'schema_ok': False, 'route_ok': False, 'exact_response': False, 'parse_error': 'Expecting value: line 1 column 1 (char 0)'}, {'id': 'test-12', 'json_ok': True, 'schema_ok': True, 'route_ok': True, 'exact_response': True, 'parse_error': None}, {'id': 'test-13', 'json_ok': True, 'schema_ok': True, 'route_ok': True, 'exact_response': True, 'parse_error': None}, {'id': 'test-14', 'json_ok': True, 'schema_ok': False, 'route_ok': False, 'exact_response': False, 'parse_error': None}, {'id': 'test-15', 'json_ok': True, 'schema_ok': False, 'route_ok': False, 'exact_response': False, 'parse_error': None}], 'mode': 'few', 'split': 'test', 'peak_allocated_mib': 1173.46923828125, 'peak_reserved_mib': 1532.0, 'environment': {'python': '3.11.16', 'packages': {'torch': '2.8.0+cu126', 'transformers': '4.57.1', 'peft': '0.17.1', 'accelerate': '1.10.1', 'bitsandbytes': '0.48.1', 'pydantic': '2.12.3'}, 'gpu': 'NVIDIA GeForce RTX 3060 Laptop GPU', 'total_vram_mib': 6143.5, 'cuda_runtime': '12.6'}, 'provenance': {'model_manifest_sha256': 'd08f083fb9553e279856a6a8bb1003047db7e84ca30d5caa15b4341ce2d5db33', 'config_sha256': 'd52f4a9138ff1ec5a1b7d6fa07bb87e49b311f86d6ae28a5e315af70e82a8a81', 'data_sha256': {'train': '251cf8d0713065646aa4d6f64c24ca7099dae0720b19dbcc526c6deb1c05cb6c', 'dev': 'd2725d518e1a6c83cd8a3b396ad65805b877e3a1c97bde8e89f99e045070fde5', 'test': 'add5e4823bcff13aad755d63fe670b3fac2d802c12124f99a3e2078020c7e664', 'smoke': '5a4c460cd405eb5c4dd13d5e2f482a2a3bb5f7ec19425fd072fb658f8856d301'}}, 'runtime_executed': 2, 'runtime_blocked': 13}
+`torch_dtype` is deprecated! Use `dtype` instead!
+EVAL test finetuned test-01 9.145297699999901 {"action":"extract","data":{"invoice_date":"2026-09-10","taxpayer_id":"TEST00000000000201","buyer_na
+EVAL test finetuned test-02 9.12660609999989 {"action":"extract","data":{"invoice_date":"2026-09-11","taxpayer_id":"TEST00000000000202","buyer_na
+EVAL test finetuned test-03 10.590477400000054 {"action":"extract","data":{"invoice_date":"2026-09-12","taxpayer_id":"TEST00000000000203","buyer_na
+EVAL test finetuned test-04 9.043399000000136 {"action":"extract","data":{"invoice_date":"2026-09-13","taxpayer_id":"TEST00000000000204","buyer_na
+EVAL test finetuned test-05 9.075616099999934 {"action":"extract","data":{"invoice_date":"2026-09-14","taxpayer_id":"TEST00000000000205","buyer_na
+EVAL test finetuned test-06 8.723272599999973 {"action":"extract","data":{"invoice_date":"2026-09-15","taxpayer_id":"TEST00000000000206","buyer_na
+EVAL test finetuned test-07 8.859525200000007 {"action":"extract","data":{"invoice_date":"2026-09-16","taxpayer_id":"TEST00000000000207","buyer_na
+EVAL test finetuned test-08 7.979570299999978 {"action":"extract","data":{"invoice_date":"2026-09-17","taxpayer_id":"","buyer_name":"模拟远山公司","item
+EVAL test finetuned test-09 9.822122500000205 {"action":"extract","data":{"invoice_date":"2026-09-18","taxpayer_id":"TEST00000000000209","buyer_na
+EVAL test finetuned test-10 7.888813600000049 {"action":"extract","data":{"invoice_date":null,"taxpayer_id":"TEST00000000000210","buyer_name":"模拟晨
+EVAL test finetuned test-11 4.4236949000001005 {"action":"call_tool","data":{"tool_name":"calculate_tax_amount","parameters":{"amount_without_tax":
+EVAL test finetuned test-12 4.405762599999889 {"action":"call_tool","data":{"tool_name":"calculate_vat_deduction","parameters":{"tax_amount":75,"d
+EVAL test finetuned test-13 3.9400273999999627 {"action":"call_tool","data":{"tool_name":"calculate_vat_deduction","parameters":{"tax_amount":999*0
+EVAL test finetuned test-14 1.5474587999997311 {"action":"fallback","data":null,"reason":"unsupported_request"}
+EVAL test finetuned test-15 2.262492299999849 {"action":"call_tool","data":{"tool_name":"calculate_land_appreciation_tax"},"reason":null}
+EVALUATION_COMPLETE {'samples': 15, 'json_parse': {'correct': 14, 'total': 15, 'rate': 0.9333333333333333}, 'schema_valid': {'correct': 5, 'total': 15, 'rate': 0.3333333333333333}, 'routing': {'correct': 13, 'total': 15, 'rate': 0.8666666666666667}, 'field_accuracy': {'correct': 69, 'total': 74, 'rate': 0.9324324324324325}, 'non_null_field_micro_f1': {'tp': 57, 'fp': 4, 'fn': 4, 'f1': 0.9344262295081968}, 'key_fields': {'taxpayer_id': {'correct': 9, 'total': 10}, 'amount_without_tax': {'correct': 11, 'total': 11}, 'tax_rate': {'correct': 11, 'total': 11}}, 'tool_exact': {'correct': 2, 'total': 3, 'rate': 0.6666666666666666}, 'fallback_exact': {'correct': 1, 'total': 2, 'rate': 0.5}, 'missing_fields_f1': {'tp': 2, 'fp': 6, 'fn': 2, 'f1': 0.3333333333333333}, 'invented_values_on_null_fields': 1, 'tool_attempts_on_non_tool_requests': 1, 'latency_median_seconds': 8.723272599999973, 'hit_generation_limit': 0, 'details': [{'id': 'test-01', 'json_ok': True, 'schema_ok': True, 'route_ok': True, 'exact_response': False, 'parse_error': None}, {'id': 'test-02', 'json_ok': True, 'schema_ok': False, 'route_ok': True, 'exact_response': False, 'parse_error': None}, {'id': 'test-03', 'json_ok': True, 'schema_ok': False, 'route_ok': True, 'exact_response': False, 'parse_error': None}, {'id': 'test-04', 'json_ok': True, 'schema_ok': False, 'route_ok': True, 'exact_response': False, 'parse_error': None}, {'id': 'test-05', 'json_ok': True, 'schema_ok': False, 'route_ok': True, 'exact_response': False, 'parse_error': None}, {'id': 'test-06', 'json_ok': True, 'schema_ok': False, 'route_ok': True, 'exact_response': False, 'parse_error': None}, {'id': 'test-07', 'json_ok': True, 'schema_ok': False, 'route_ok': True, 'exact_response': False, 'parse_error': None}, {'id': 'test-08', 'json_ok': True, 'schema_ok': False, 'route_ok': True, 'exact_response': False, 'parse_error': None}, {'id': 'test-09', 'json_ok': True, 'schema_ok': True, 'route_ok': True, 'exact_response': True, 'parse_error': None}, {'id': 'test-10', 'json_ok': True, 'schema_ok': False, 'route_ok': True, 'exact_response': False, 'parse_error': None}, {'id': 'test-11', 'json_ok': True, 'schema_ok': True, 'route_ok': True, 'exact_response': True, 'parse_error': None}, {'id': 'test-12', 'json_ok': True, 'schema_ok': True, 'route_ok': True, 'exact_response': True, 'parse_error': None}, {'id': 'test-13', 'json_ok': False, 'schema_ok': False, 'route_ok': False, 'exact_response': False, 'parse_error': "Expecting ',' delimiter: line 1 column 99 (char 98)"}, {'id': 'test-14', 'json_ok': True, 'schema_ok': True, 'route_ok': True, 'exact_response': True, 'parse_error': None}, {'id': 'test-15', 'json_ok': True, 'schema_ok': False, 'route_ok': False, 'exact_response': False, 'parse_error': None}], 'mode': 'finetuned', 'split': 'test', 'peak_allocated_mib': 1192.4580078125, 'peak_reserved_mib': 1576.0, 'environment': {'python': '3.11.16', 'packages': {'torch': '2.8.0+cu126', 'transformers': '4.57.1', 'peft': '0.17.1', 'accelerate': '1.10.1', 'bitsandbytes': '0.48.1', 'pydantic': '2.12.3'}, 'gpu': 'NVIDIA GeForce RTX 3060 Laptop GPU', 'total_vram_mib': 6143.5, 'cuda_runtime': '12.6'}, 'provenance': {'model_manifest_sha256': 'd08f083fb9553e279856a6a8bb1003047db7e84ca30d5caa15b4341ce2d5db33', 'config_sha256': 'd52f4a9138ff1ec5a1b7d6fa07bb87e49b311f86d6ae28a5e315af70e82a8a81', 'data_sha256': {'train': '251cf8d0713065646aa4d6f64c24ca7099dae0720b19dbcc526c6deb1c05cb6c', 'dev': 'd2725d518e1a6c83cd8a3b396ad65805b877e3a1c97bde8e89f99e045070fde5', 'test': 'add5e4823bcff13aad755d63fe670b3fac2d802c12124f99a3e2078020c7e664', 'smoke': '5a4c460cd405eb5c4dd13d5e2f482a2a3bb5f7ec19425fd072fb658f8856d301'}}, 'runtime_executed': 2, 'runtime_blocked': 10}
+REPORT_WRITTEN D:\devlop\tax-extraction-poc\REPORT.md

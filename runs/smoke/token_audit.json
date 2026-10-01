@@ -1,0 +1,32 @@
+[
+  {
+    "id": "smoke-01",
+    "tokens": 259,
+    "supervised_tokens": 39
+  },
+  {
+    "id": "smoke-02",
+    "tokens": 265,
+    "supervised_tokens": 41
+  },
+  {
+    "id": "smoke-03",
+    "tokens": 224,
+    "supervised_tokens": 16
+  },
+  {
+    "id": "smoke-04",
+    "tokens": 234,
+    "supervised_tokens": 17
+  },
+  {
+    "id": "smoke-05",
+    "tokens": 260,
+    "supervised_tokens": 39
+  },
+  {
+    "id": "smoke-06",
+    "tokens": 260,
+    "supervised_tokens": 39
+  }
+]
